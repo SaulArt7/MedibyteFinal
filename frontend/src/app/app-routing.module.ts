@@ -11,7 +11,7 @@ const routes: Routes = [
 // Rutas a componentes
 {path: 'login', component: LoginComponent},
 {path: 'signup', component: SignupComponent, canActivate: [UserGuard]},
-{path: 'home', component: HomeComponent, canActivate: [UserGuard]}, // Sin Slash
+{path: 'home', component: HomeComponent}, // Sin Slash
 {path: 'admin-products',component:AdminProductsComponent, canActivate: [UserGuard]},
 // Redireccionamientos o página 404
 {path: '', redirectTo: 'home', pathMatch: 'full'},
