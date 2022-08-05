@@ -1,7 +1,69 @@
 <!-- <p>navbar works!</p> -->
+<section>
+  <nav
+    class="navbar navbar-expand-lg navbar-light bg-light d-flex p-0 fixed-top"
+  >
+    <a class="navbar-brand ms-5 p-0" href="/home"
+      ><img src="../../../assets/logos/MediByte2.png" alt="logo" width="170px"
+    /></a>
+    <button
+      class="navbar-toggler me-3"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse ms-4 me-4 links-navbar pt-3 pb-2 justify-content-end"
+      id="navbarNavAltMarkup"
+    >
+      <div
+        class="navbar-nav ms-auto"
+        *ngIf="!usersService.loggedIn(); else userLogged"
+      >
+        <a class="nav-link underline" aria-current="page" href="/home"
+          >Inicio</a>
+        <a class="nav-link underline" onclick="window.scrollTo( 0, 550);"
+          >Nosotros</a>
+        <a class="nav-link underline" href="#servicios">Servicios</a>
+        <a class="nav-link underline me-3" href="#contacto">Contacto</a>
+        <a class="nav-link navbar-btn text-center me-1" href="/signup"
+          >Registrarse</a
+        >
+        <a class="nav-link navbar-btn text-center" href="/login"
+          >Iniciar Sesión</a
+        >
+      </div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-purple fw-bold fst-italic">
-  <!--bg-light-->
+      {{ this.usersService.decodeToken().username }}
+      <ng-template #userLogged>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link underline" aria-current="page" href="/home"
+          >Inicio</a>
+          <!-- <a class="btn btn-success" href="/factura">Vender</a> -->
+          <a class="nav-link underline" href="/admin-products">Administrar Productos</a>
+          <a class="nav-link underline" href="/signup">Modificar Usuarios</a>
+          <a href="" class="nav-link underline">{{
+            this.usersService.decodeToken().data.username
+          }}</a>
+          <a href="" class="nav-link underline" (click)="usersService.logOut()">Salir</a>
+        </div>
+      </ng-template>
+    </div>
+  </nav>
+</section>
+
+<div class="container-fluid fix-fixed-top">
+  <!--  Este div soluciona problema de visualización generado con la Navbar en fixed-top -->
+</div>
+
+<!-- --------------------------------------------------------------------------- -->
+<!--
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex p-0 fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/home">Medibyte</a>
     <button
@@ -36,13 +98,6 @@
           <a href="" class="nav-link" (click)="usersService.logOut()">Salir</a>
         </div>
       </ng-template>
-
-      <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
-      <!-- <a class="btn btn-success" href="/factura">Vender</a>
-        <a class="nav-link" href="/admin-products">Administrar Productos</a>
-        <a class="nav-link" href="/signup">Registro de Usuarios</a>
-        <a class="nav-link" href="/login">Iniciar Sesión</a> -->
-      <!-- <a class="nav-link disabled">Disabled</a> -->
     </div>
   </div>
-</nav>
+</nav> -->
