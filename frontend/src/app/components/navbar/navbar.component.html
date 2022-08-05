@@ -1,0 +1,48 @@
+<!-- <p>navbar works!</p> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-purple fw-bold fst-italic">
+  <!--bg-light-->
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home">Medibyte</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div
+        class="navbar-nav ms-auto"
+        *ngIf="!usersService.loggedIn(); else userLogged"
+      >
+        <a class="nav-link" href="/login">Iniciar Sesión</a>
+        <a class="nav-link" href="/signup">Registro de Usuarios</a>
+      </div>
+
+      {{ this.usersService.decodeToken().username }}
+      <ng-template #userLogged>
+        <div class="navbar-nav ms-auto">
+          <a class="btn btn-success" href="/factura">Vender</a>
+          <a class="nav-link" href="/admin-products">Administrar Productos</a>
+          <a class="nav-link" href="/signup">Registro de Usuarios</a>
+          <a href="" class="nav-link">{{
+            this.usersService.decodeToken().data.username
+          }}</a>
+          <a href="" class="nav-link" (click)="usersService.logOut()">Salir</a>
+        </div>
+      </ng-template>
+
+      <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+      <!-- <a class="btn btn-success" href="/factura">Vender</a>
+        <a class="nav-link" href="/admin-products">Administrar Productos</a>
+        <a class="nav-link" href="/signup">Registro de Usuarios</a>
+        <a class="nav-link" href="/login">Iniciar Sesión</a> -->
+      <!-- <a class="nav-link disabled">Disabled</a> -->
+    </div>
+  </div>
+</nav>

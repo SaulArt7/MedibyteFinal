@@ -1,0 +1,169 @@
+Consultas pendientes:
+** Función flecha.
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Ejecutamos:
+npm init -y // Comando de npm: gestor de paquetes por defecto de Node.js, nuevo proyecto, genera package.json
+
+Configuramos en package.json:
+1. "dev": "nodemon src/app.js" // En scripts
+2.   "main": "./src/app.js", // en main
+
+Instalamos por consola en la carpeta raiz (misma del init -y):
+0. npm i cors dotenv express jsonwebtoken mongoose nodemon morgan bycriptjs
+express es framework de? :
+
+Creamos archivo app.js en src/app.js:
+*******************************************************************************
+Ver archivo y explicaciones en él:
+// Nuestro backend tiene tres partes principales:
+// Conexión a la Base de datos
+// Módulos que va usar express
+// Rutas
+
+app.use(morgan('dev'))
+app.use(express.json()) // Para convertir las peticiones (request) que enviamos en el Body: enviamos objetos.
+app.use(cors())
+// app.use(cors({origin: {'http://localhost:4200'}})) // Para indicar desde que direcciones se pueden hacer peticiones a la API, si no ponemos ninguna: Permite todas.
+
+PRO-PCEI
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Proyecto de Angular para el Frontend:
+
+En la carpeta raiz de nuestro proyecto (la que contiene nuestro backend) creamos nuestro proyecto de angular:
+
+Ejecutamos comando por consola:
+ng new <nombre de nuestro proyecto de Frontend>
+ng new Frontend
+
+Determinamos nuestra arquitectura: Dentro de la carpeta app: Creamos las carpetas:
+components
+views
+services
+
+En index.html
+Importamos Boostrap, en este caso: 5.2
+
+en app.component.html:
+Eliminamos la plantilla, dejando sólo la última línea: <router-outlet></router-outlet>
+
+Generamos y diseñamos los componentes:
+
+1. Componentes base (no vistas, sino que conforman a las vistas)
+1. navbar
+
+2. Componentes de Vistas: (se conforman de otros componentes)
+2.1. Login
+2.2. Productos
+2.3. Usuarios
+
+ng g c components/navbar
+Lo agregamos a nuestra vista Principal: app.component.html, antes de router outlet:
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+
+
+
+En nuestro Frontend queremos:
+Hacer peticiones al backend
+Proteger las vistas con Login
+
+En nuestro signup: 
+
+Creamos diseño de un formulario, ejemplo usando Boostrap 5.2 en presente proyecto.
+
+Realizamos el Doble enlace de datos: Formulario a los Servicios:
+Para lo que se requiere En app module.ts
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule} from '@angular/forms';
+
+En el component.ts: signup.component.ts:
+importamos el NgForm
+import { NgForm } from '@angular/forms';
+
+Creamos el modelo de nuestro Usuario dentro de la carpeta models:
+user.model.ts // Manualmente: no es por consola
+
+Generamos servicio: por consola en carpeta de app: services
+ng generate service services/users
+** Añade por defecto terminación .service: quedando el users.service.ts
+
+Enlazamos el formulario con el modelo y el 
+#userForm="ngForm"
+En cada input:
+Modelo en que se va a guardar la variables
+[(ngModel)]="usersService.selectedUser.lastName"
+Y nombre del atributo con name ="username"
+
+Para el formulario, tener primero el Modelo y el Servicio en que voy a guardar los datos
+
+
+Prefiere mejor Hiperlinks (colocando la clase de botones a bootstrap) que los botones, porque los botones disparan todo el formulario
+Así queda separado cada función y sabemos que va a ejecutar.
+
+
+Configuraciones generales:
+
+Distribución:
+añadimos a .gitignore
+* La carpeta de node_modules (contiene las dependencias que instalamos con npm i ... al descargar el resto del proyecto)
+* El archivo .env (nuestras variables de entorno, como conexión DB, usuario y password de la misma)
+- Creamos archivo de ejemplo del .env con sólo los nombres de las variables desde allí utilizadas
+
+adminProducts: Convierte a admin-products 
+al generar el componente
+
+
+/*************************************************************************************
+
+Modificar Usuarios para Diferenciar Clientes vs. Administradores
+// 
+
+La conexión entre en l Frontend y Backend realmente Ocurre en el service.ts del componente.
+Se requiere la URI: que usamos en el Backend para llegar, 
+Es la que usamos para requerir a la API
+
+** Se puede usar por ejemplo: nodeMailer: librería para enviar correos,
+** Desde qué correo, mensaje, enviar o no enviar archivos.
+** La lógica es en el backend: guardamos el código generado en la DB, y luego lo compararemos con lo que el usuario registra en nuestra interfaz para ello.
+** También se puede por Whatsapp y es más fácil con API de Whatsapp. o con Un BOT !.
+
+
+LocalStorage: (lo recomienda más que Sessión Storage)
+Almacenamiento local para llaves y valores
+* Guardamos el Token aquí, para poder sacar la información en el momento que lo necesitemos,
+También sirve para hacer el DashBoard,
+* En la sección de Herramientas del desarrollador: Aplicación:
+Ahí están (localStorage): localStorage.setItem('nombre de la llave',12) // la guarda con valor de 12
+localStorage.getItem('nombre de la llave') // retorna el valor
+** Todo se guarda en formato de texto.
+localStorage.removeItem('') // Cuando cerramos la sesión
+/// Ejemplos de Uso:
+Inicio de Sesión: Mostrable al público. 
+Funciona sólo en el navegador: Donde el usuario está accediendo.
+
+localStorage.removeItem('token',data.token)
+
+SessionStorage:
+
+
+Angular router: hacer enrutamientos desde las funciones:
+* @angular
+
+** Enviar Whatsapp o Correos.
+** Validar token, valido o usuario correcto.
+** Generar Facturas
+
+// Modificar el backend para usuario administrador Vs. Cliente.
+
+**
+Para realizar las protecciones de las vistas (components: views) u otros componentes: ejemplo: validar si el el usuario se loggeó correctamente:
+
+*Generamos el archivo guards.ts en la carpeta creada dentro de app: guards
+ng g guard guards/user
+

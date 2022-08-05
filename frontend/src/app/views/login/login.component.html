@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row justify-content-center text-center">
+    <div class="col-4">
+      <div class="m-4"  style="width: 18rem">
+        <div class="form-control">
+        <form (ngSubmit)="loginUser(loginForm)" #loginForm="ngForm">
+            <div class="row mt-3">
+              <div class="col-12">
+                <input class="col-12 mb-3 border-0 border-bottom" type="text" id="input1" name="email" ngModel required placeholder="Ingresa tu email"/>
+               <input class="col-12 mb-3 border-0 border-bottom" type="text" id="input2" name="password" ngModel placeholder="Ingresa tu contraseña"/>
+              </div>
+              <div class="action">
+                <div class="input-field col-12">
+                  <button class="btn left btn-success m-2" type="submit">Logearme</button>
+                 <button class="btn right btn-primary m-2" (click)="resetForm(loginForm)">Limpiar</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
