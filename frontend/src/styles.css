@@ -35,7 +35,7 @@
       }
 
       .image {
-          background-image: url('./logos/humanos.jpg');
+          background-image: url('assets/images/humanos.jpg');
           background-repeat: no-repeat;
           background-size: 100% 115%;
           opacity: 0.6;
@@ -316,7 +316,7 @@
   }
 
   .user_placeholder::placeholder {
-      background-image: url(icons/user.png);
+      background-image: url(assets/icons/user.png);
       background-size: 20px 20px;
       background-repeat: no-repeat;
       background-position: left center;
@@ -324,7 +324,7 @@
   }
 
   .user_placeholder2::placeholder {
-      background-image: url(icons/lock.png);
+      background-image: url(assets/icons/lock.png);
       background-size: 20px 20px;
       background-repeat: no-repeat;
       background-position: left center;
