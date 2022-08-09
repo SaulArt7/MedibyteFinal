@@ -39,17 +39,15 @@
         >
       </div>
 
-      {{ this.usersService.decodeToken().username }}
+      {{ this.usersService.decodeToken().name }}
       <ng-template #userLogged>
         <div class="navbar-nav ms-auto">
           <a class="nav-link underline" aria-current="page" href="/home"
           >Inicio</a>
           <!-- <a class="btn btn-success" href="/factura">Vender</a> -->
           <a class="nav-link underline" href="/admin-products">Administrar Productos</a>
-          <a class="nav-link underline" href="/signup">Modificar Usuarios</a>
-          <a href="" class="nav-link underline">{{
-            this.usersService.decodeToken().data.username
-          }}</a>
+          <a class="nav-link underline" href="/adminpanel">Admin Panel</a>    <!-- this.usersService.decodeToken().data.name -->
+          <a href="/perfil" class="nav-link underline">Hola! {{ this.usersService.decodeToken().data.name }} {{ this.usersService.decodeToken().data.lastName }}</a>  <!-- usersService.users.user -->
           <a href="" class="nav-link underline" (click)="usersService.logOut()">Salir</a>
         </div>
       </ng-template>

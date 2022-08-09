@@ -13,6 +13,13 @@ router.post("/sign-up", async (request, response) => {
     try {
         
        // Colocar aquí la validación de que ya existe o no usuario con Email que se intenta registrar: Es un método find, a una constante.
+       const isExist = await User.find({email: request.body.email})
+
+       console.log(isExist)
+
+       if(isExist.length > 0){
+           return response.status(400).json({status: "El correo ya fue registrado"})
+       }
         
         const password = await bcryptjs.hash(request.body.password, 10) // Dos parámetros    
         const user = User({ ...request.body, password })
@@ -114,7 +121,10 @@ router.post("/login", async (request, response) => {
                 const token = jwt.sign({data},'llavesecreta') // Se prefiere extensa, con carácteres especiales.
                 return response.status(200).json({status: 'Usuario Logeado', token})
             }
+            
+            console.log('Contraseña Incorrecta')
             return response.status(403).json({status: "Contraseña Incorrecta"})
+            
         }
         return response.status(403).json({status: "Usuario no existe"})
         
