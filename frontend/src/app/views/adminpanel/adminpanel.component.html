@@ -16,13 +16,13 @@
                 <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="usersService.selectedUser._id">
                 <div class="col-12">
                  <input class="col-12 mb-3 border-0 border-bottom" type="text" name="name" #name="ngModel" [ngModel]="usersService.selectedUser.name" placeholder="Ingresa tu Nombre"/>
-                 <input class="col-12 mb-3 border-0 border-bottom" type="text" name="lastName" #lastName="ngModel" [(ngModel)]="usersService.selectedUser.lastName" placeholder="Ingresa tu Apellido"/>
-                 <input class="col-12 mb-3 border-0 border-bottom" type="text" name="email" #email="ngModel" [(ngModel)]="usersService.selectedUser.email" placeholder="Ingresa tu email"/>
-                 <input class="col-12 mb-3 border-0 border-bottom" type="text" name="role" #role="ngModel" [(ngModel)]="usersService.selectedUser.role" placeholder="Ingresa tu Rol"/>
-                 
+                 <input class="col-12 mb-3 border-0 border-bottom" type="text" name="lastName" #lastName="ngModel" [ngModel]="usersService.selectedUser.lastName" placeholder="Ingresa tu Apellido"/>
+                 <input class="col-12 mb-3 border-0 border-bottom" type="text" name="email" #email="ngModel" [ngModel]="usersService.selectedUser.email" placeholder="Ingresa tu email"/>
+                 <input class="col-12 mb-3 border-0 border-bottom" type="text" name="role" #role="ngModel" [ngModel]="usersService.selectedUser.role" placeholder="Ingresa tu Rol"/>
+
 <!--             <input class="col-12 mb-3 border-0 border-bottom" type="text" name="password" #password="ngModel" [(ngModel)]="usersService.selectedUser.password" placeholder="Ingresa tu contraseña"/>
                  <input class="col-12 mb-3 border-0 border-bottom" type="text" name="confirmPassword" #password="ngModel" [(ngModel)]="usersService.selectedUser.confirmPassword" placeholder="Confirma tu contraseña"/> -->
-  
+
                 </div>
                 <div class="action">
                   <div class="input-field col-12">
@@ -66,9 +66,9 @@
       </div>
     </div>
   </div>
-  
+
   <hr />
-  
+
   <!-- Con Materialize -->
   <!-- <h2>Formulario con Inputs</h2> -->
   <!-- <div class="container">
@@ -129,9 +129,9 @@
       </div>
     </div>
   </div> -->
-  
+
   <!-- Prueba de tarjetas -->
-  
+
   <!-- <div class="card m-4" style="width: 18rem">
     <img
       src="https://picsum.photos/300/300?random=2"
@@ -155,10 +155,10 @@
       </h6>
     </div>
   </div> -->
-  
+
   <!-- <div class="d-flex flex-wrap justify-content-center" id="charsContainer"></div> -->
   <!-- Para hacer tarjetas -->
-  
+
   <!-- name = 'Juan';
    lastName = 'Suarez';
    username = 'JuanA';
@@ -168,4 +168,3 @@
     updatedAt = '2022-07-20T00:09:03.645Z';
     isActive = 'true';
    _id = '62d61ffa41eb7498f254d263'; -->
-  
