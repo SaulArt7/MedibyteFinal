@@ -10,10 +10,12 @@ import { HomeComponent } from './views/home/home.component';
 
 import { HttpClientModule } from '@angular/common/http'
 
-//CRUD FAZT-WEB:
+
 import { FormsModule} from '@angular/forms';
 import { AdminProductsComponent } from './views/admin-products/admin-products.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { FooterComponent } from './components/footer/footer.component';
     LoginComponent,
     HomeComponent,
     AdminProductsComponent,
-    FooterComponent
+    FooterComponent,
+    AdminpanelComponent
   ],
   imports: [
     BrowserModule,

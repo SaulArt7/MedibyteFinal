@@ -2,8 +2,9 @@ export class User {
   _id: string;
   name: string;
   lastName: string;
-  username: string;
   email: string;
+  document: number;
+  tel: number;
   role: string;
   isActive: any;
   password: string;
@@ -14,8 +15,9 @@ export class User {
     _id = '',
     name = '',
     lastName = '',
-    username = '',
     email = '',
+    document = 0,
+    tel = 0,
     role = '',
     isActive: any = '',
     password = '',
@@ -24,8 +26,9 @@ export class User {
     this._id = _id;
     this.name = name;
     this.lastName = lastName;
-    this.username = username;
     this.email = email;
+    this.document = document;
+    this.tel = tel;
     this.role = role;
     this.isActive = isActive;
     this.password = password;
