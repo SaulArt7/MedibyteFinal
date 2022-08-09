@@ -11,8 +11,11 @@ import { HomeComponent } from './views/home/home.component';
 import { HttpClientModule } from '@angular/common/http'
 
 //CRUD FAZT-WEB:
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AdminProductsComponent } from './views/admin-products/admin-products.component';
+import { AdminClientComponent } from './views/admin-client/admin-client.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { AdminProductsComponent } from './views/admin-products/admin-products.co
     SignupComponent,
     LoginComponent,
     HomeComponent,
-    AdminProductsComponent
+    AdminProductsComponent,
+    AdminClientComponent,
+    CalendarComponent,
+
   ],
   imports: [
     BrowserModule,

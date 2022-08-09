@@ -6,6 +6,9 @@ import { LoginComponent } from './views/login/login.component';
 import { SignupComponent } from './views/signup/signup.component';
 
 import { UserGuard } from './guards/user.guard';
+import { AdminClientComponent } from './views/admin-client/admin-client.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+
 
 const routes: Routes = [
 // Rutas a componentes
@@ -13,6 +16,11 @@ const routes: Routes = [
 {path: 'signup', component: SignupComponent, canActivate: [UserGuard]},
 {path: 'home', component: HomeComponent}, // Sin Slash
 {path: 'admin-products',component:AdminProductsComponent, canActivate: [UserGuard]},
+{path: 'admin-client', component:AdminClientComponent, canActivate: [UserGuard]},
+{path: 'calendar', component:CalendarComponent},
+
+
+
 // Redireccionamientos o página 404
 {path: '', redirectTo: 'home', pathMatch: 'full'},
 {path: '**', component: HomeComponent}
