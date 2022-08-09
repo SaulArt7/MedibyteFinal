@@ -1,1 +1,393 @@
+<!-- Inicio de Carrousel --------------------------------------------------------------------------------->
+<section>
+    <div
+      id="carouselFade"
+      class="carousel slide carousel-fade"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="assets/images/banner1.png"
+            class="d-block w-100"
+            alt="Banner 1"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="assets/images/banner2.png"
+            class="d-block w-100"
+            alt="Banner 2"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="assets/images/banner3.png"
+            class="d-block w-100"
+            alt="Banner 3"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselFade"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselFade"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  <!-- Fin de Carrousel --------------------------------------------------------------------------------->
 
+  <!-- Inicio de Sección Nosotros ----------------------------------------------------------------------->
+  <div class="container-fluid fix-fixed-top" id="nosotros">
+    
+  </div>
+  <section>
+    <div class="container d-flex justify-content-center title-color pt-0">
+      <h2>NOSOTROS</h2>
+    </div>
+    <div class="container d-block d-sm-none justify-content-center flex-wrap">
+      <div class="align-content-start d-flex justify-content-center">
+        <img
+          src="assets/images/nosotros1.png"
+          alt="nosotros1"
+          class="img-fluid vh-50 p-5 w-75"
+        />
+      </div>
+      <div class="align-content-end text-wrap container d-flex">
+        <p class="justify-items-center d-inline-flex align-self-center">
+          Somos una empresa de software que ofrece soluciones innovadoras a
+          problemas frecuentes de las instituciones de salud.
+        </p>
+      </div>
+    </div>
+    <div class="container d-sm-flex d-none">
+      <div class="align-content-start d-inline-flex justify-content-center">
+        <img
+          src="assets/images/nosotros1.png"
+          alt="nosotros1"
+          class="img-fluid vh-50 p-5 w-75"
+        />
+      </div>
+      <div class="align-content-end text-wrap container d-inline-flex">
+        <p class="justify-items-center d-inline-flex align-self-center">
+          Somos una empresa de software que ofrece soluciones innovadoras a
+          problemas frecuentes de las instituciones de salud.
+        </p>
+      </div>
+    </div>
+    <div class="container d-block d-sm-none flex-wrap">
+      <div class="align-content-end justify-content-center d-flex">
+        <img
+          src="assets/images/nosotros3.png"
+          alt="nosotros1"
+          class="img-fluid vh-50 p-5 w-75"
+        />
+      </div>
+      <div class="align-content-start text-wrap container d-flex">
+        <p class="justify-items-center d-inline-flex align-self-center">
+          Facilitamos la gestión eficiente de los recursos en diferentes
+          procesos y servicios a través de la tecnología.
+        </p>
+      </div>
+    </div>
+    <div class="container d-sm-flex d-none">
+      <div class="align-content-start text-wrap container d-inline-flex mb-0">
+        <p
+          class="justify-items-center d-inline-flex align-self-center mb-0 pb-0"
+        >
+          Facilitamos la gestión eficiente de los recursos en diferentes
+          procesos y servicios a través de la tecnología.
+        </p>
+      </div>
+      <div class="align-content-end d-inline-flex justify-content-center">
+        <img
+          src="assets/images/nosotros3.png"
+          alt="nosotros1"
+          class="img-fluid vh-50 pt-5 px-5 w-75"
+        />
+      </div>
+    </div>
+  </section>
+<!-- Fin de la seccion nosotros ----------------------------------------------------------------------->
+
+  <!-- Inicio de Sección Servicios ----------------------------------------------------------------------->
+  <div class="container-fluid fix-fixed-top" id="servicios">
+    <!--  Este div soluciona problema de visualización generado con la Navbar en fixed-top -->
+  </div>
+  <section class="servicios container text-center">
+    <h2 class="title-color mb-5">Servicios para:</h2>
+    <div class="d-flex flex-wrap justify-content-around mx-5 gap-5">
+      <div class="seccion-parte">
+        <h3 class="title-color my-4">Instituciones</h3>
+        <img src="assets/images/servicio-institucion.jpg" alt=""/>
+        <p>Controla en tiempo real tus indicadores, tu calidad.</p>
+        <button
+          class="boton"
+          onclick="location.href='servicioControl.html'"
+          target="_blank"
+        >
+          <span>Ver Más</span>
+          <svg viewBox="0 0 13 10" height="9px" width="15px">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="seccion-parte">
+        <h3 class="title-color my-4">Especialistas</h3>
+        <img src="assets/images/servicio-especialista.jpg" alt=""/>
+        <p>Publica tu perfil, tu agenda disponible</p>
+        <button class="boton" onclick="location.href='servicioCitas.html'">
+          <span>Ver Más</span>
+          <svg viewBox="0 0 13 10" height="9px" width="15px">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="seccion-parte">
+        <h3 class="title-color my-4">Usuarios</h3>
+        <img src="assets/images/servicio-usuario.jpg" alt=""/>
+        <p>Adquiere tus medicamentos, opotunamente</p>
+        <button class="boton" onclick="location.href='servicioCompra.html'">
+          <span>Ver Más</span>
+          <svg viewBox="0 0 13 10" height="9px" width="15px">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Fin de Sección Servicios ----------------------------------------------------------------------->
+  <!-- Inicio de Sección Testimonios ------------------------------------------------------------------->
+  <div class="container-fluid fix-fixed-top" id="testimonios">
+    <!--  Este div soluciona problema de visualización generado con la Navbar en fixed-top -->
+  </div>
+  <section class="testimonios container">
+    <div class="col-md-8 m-auto text-center">
+      <h2 class="title-color mb-5">Testimonios</h2>
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="img-box mb-5">
+              <img src="assets/images/Testimonio-face1.jpg" alt="..." />
+            </div>
+            <p class="test mx-auto">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu
+              sem tempor, varius quam at, luctus dui. Mauris magna metus,
+              dapibus nec turpis vel, semper malesuada ante. Idac bibendum
+              scelerisque non non purus. Suspendisse varius nibh non."
+            </p>
+            <p class="overview"><b>JENNYFER SMITH</b>, Office Worker</p>
+          </div>
+          <div class="carousel-item item">
+            <div class="img-box mb-5">
+              <img src="assets/images/Testimonio-face2.jpg" alt="..." />
+            </div>
+            <p class="test mx-auto">
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Adipisci temporibus aperiam sint pariatur deserunt voluptate
+              omnis dicta, at consequuntur dolorem? Cum eum earum quas veniam
+              quisquam est, vel vero facilis?."
+            </p>
+            <p class="overview"><b>JENNYFER SMITH</b>, Office Worker</p>
+          </div>
+          <div class="carousel-item item">
+            <div class="img-box mb-5">
+              <img src="assets/images/Testimonio-face3.jpg" alt="..." />
+            </div>
+            <p class="test mx-auto">
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+              distinctio laudantium consequatur sunt labore, numquam quasi
+              nisi iusto consequuntur dignissimos excepturi inventore
+              reprehenderit deseru"
+            </p>
+            <p class="overview"><b>JENNYFER SMITH</b>, Office Worker</p>
+          </div>
+          <div class="carousel-item item">
+            <div class="img-box mb-5">
+              <img src="assets/images/Testimonio-face4.jpg" alt="..." />
+            </div>
+            <p class="test mx-auto">
+              "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Laboriosam voluptate ipsa sed ducimus iusto molestias cum
+              molestiae velit ex quae dolor fugit mollitia, esse quo nostrum
+              vitae odio! Omnis, magnam!"
+            </p>
+            <p class="overview"><b>Jennifer Smith</b>, Office Worker</p>
+          </div>
+          <div class="carousel-item item">
+            <div class="img-box mb-5">
+              <img src="assets/images/Testimonio-face5.jpg" alt="..." />
+            </div>
+            <p class="test mx-auto">
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium dolorem quo perspiciatis laborum sunt hic ut maxime,
+              iste quae illo repellat ab, odit cumque quis veniam suscipit
+              inventore, nostrum distinctio."
+            </p>
+            <p class="overview"><b>JENNYFER SMITH</b>, Office Worker</p>
+          </div>
+          <div class="carousel-item item">
+            <div class="img-box mb-5">
+              <img src="assets/images/Testimonio-face6.jpg" alt="..." />
+            </div>
+            <p class="test mx-auto">
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+              non consequuntur assumenda doloribus quam! Ipsum asperiores enim
+              quo. Odio explicabo expedita illum iste dolor vero repellendus
+              consequuntur tempore natus libero."
+            </p>
+            <p class="overview"><b>Jennifer Smith</b>, Office Worker</p>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"
+            ><img
+              src="assets/icons/icon-carrucel-izq.svg"
+              width="50px"
+              alt="imagen de icono carrusel"
+          /></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"
+            ><img
+              src="assets/icons/icon-carrucel-der.svg"
+              width="50px"
+              alt=""
+          /></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Fin de Sección Testimonios -------------------------------------------------------------------->
+  <!-- Inicio de Sección de Prueba Video ------------------------------------------------------------------->
+  <section class="container text-center">
+    <p class="h4 title-color mt-5 mb-4">
+      Las mejores características de nuestra plataforma:
+    </p>
+    <div>
+      <iframe class="video"
+      src="https://www.youtube.com/embed/G4pwIuVFHao"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+    </div>
+  </section>
+  <!-- Fin de Sección de Prueba Video ------------------------------------------------------------------->
+      <!--Inicio Sección de Contacto 2---------------------------------------------------------------->
+   <!--formulario contacto  -->
+  <section class="formulario container mb-5" id="contacto">
+
+    <!--Titulo-->
+    <div class="mt-5 mb-4">
+      <div>
+        <h2 class="dark-blue-text text-center">Formulario de Contacto</h2>
+      </div>
+    </div>
+
+      <!--Formulario-->
+    <div class="contacto-form d-flex flex-wrap align-items-center justify-content-center gap-5"> 
+      <div class="col-sm-12 col-md-7 rounded shadow p-4">
+        <div>
+          <p class="text-center">Escríbenos y en breve nos pondremos en contacto contigo</p>
+        </div>
+        <div>
+          <form action="#" class="mx-3" >
+            <div class="mb-3 row">
+              <input class="p-2" type="text" placeholder="Nombres y Apellidos">
+            </div>
+            
+            <div class="mb-3 row">
+              <input class="p-2" type="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo Electronico">
+            </div>
+  
+            <div class="mb-3 row">
+              <input class="p-2" type="text"  placeholder="Asunto">
+            </div>
+  
+            <div class="mb-3 row">
+              <textarea class="p-2" placeholder="Mensaje" id="floatingTextarea2" style="height: 100px"></textarea>
+            </div>
+  
+            <div class="d-grid gap-2  ">
+              <input class="btn btn dark-blue text-white" type="submit" value="Enviar">  
+            </div>
+          </form>
+        </div>
+      </div> 
+      
+      <!--Ubicaicón-->
+      <div class="contacto-info col-sm-12 col-md-4" >
+        <div class="d-flex justify-content-center mb-5" >
+          <h2 class="title-color">Contáctanos</h2>
+        </div>
+
+        <div class="text-center mb-5">
+          <p class="fw-bold title-color"><img class="icon-info" src="assets/images/llamada-telefonica.png" alt="imagen prueba"> &nbsp;&nbsp;LLÁMANOS</p>
+          <p>1(234)567-891, 1(234)987-654</p>
+        </div>
+
+        <div class="text-center mb-5"> 
+          <div>
+            <button class="mapa mb-3" data-bs-toggle="modal" data-bs-target="#fm-modal-mapa">
+              <p class="fw-bold title-color m-0"><img class="icon-info" src="assets/images/marcador-de-posicion.png"  alt=""> &nbsp;&nbsp;VER MAPA</p>
+            </button>
+            <div class="mapa modal fade" id="fm-modal-mapa" tabindex="-1" role="dialog" aria-labelledby="fm-modal" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d405688.6188897054!2d-122.32129266039233!3d37.40301850783409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb68ad0cfc739%3A0x7eb356b66bd4b50e!2sSilicon%20Valley%2C%20California%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sco!4v1653625071951!5m2!1ses-419!2sco" width="760" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>Calle 42 # 15-34 Cali-Valle del Cauca</p>
+        </div>
+        
+        
+        <div class="text-center">
+          <p class="fw-bold title-color"><img class="icon-info" src="assets/images/horas-laborales.png"  alt="imagen prueba"> &nbsp;&nbsp;HORARIO</p> 
+          <p>Lunes a Viernes 7am-5pm</p>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- Fin de Sección de Contacto 2------------------------------------------------------------------->
+
+<!-- Footer ------------------------------------------------------------------------------------------->
+<app-footer></app-footer>
