@@ -4,6 +4,7 @@ import { AdminProductsComponent } from './views/admin-products/admin-products.co
 import { HomeComponent } from './views/home/home.component'; // Se importa sólo con la ruta en Routes:
 import { LoginComponent } from './views/login/login.component';
 import { SignupComponent } from './views/signup/signup.component';
+import { PqrsComponent } from './views/pqrs/pqrs.component';
 
 import { UserGuard } from './guards/user.guard';
 
@@ -13,6 +14,8 @@ const routes: Routes = [
 {path: 'signup', component: SignupComponent, canActivate: [UserGuard]},
 {path: 'home', component: HomeComponent}, // Sin Slash
 {path: 'admin-products',component:AdminProductsComponent, canActivate: [UserGuard]},
+{path: 'pqrs', component: PqrsComponent},
+
 // Redireccionamientos o página 404
 {path: '', redirectTo: 'home', pathMatch: 'full'},
 {path: '**', component: HomeComponent}
