@@ -11,14 +11,16 @@
           <div class="form-control input-lg">
             <form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
               <div class="row mt-3">
-                <p class="display-6 nav-link tituloc" *ngIf="_id.value==''">Editar Usuario</p>
-                <p class="h2" *ngIf="_id.value!=''">Modificar Usuario</p>
+                <p class="display-6 nav-link tituloc" *ngIf="_id.value==''">Crear Usuario</p>
+                <p class="nav-link tituloc" *ngIf="_id.value!=''">Editar Usuario</p>
                 <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="usersService.selectedUser._id">
                 <div class="col-12">
                  <input class="col-12 mb-3 border-0 border-bottom" type="text" name="name" #name="ngModel" [ngModel]="usersService.selectedUser.name" placeholder="Ingresa tu Nombre"/>
                  <input class="col-12 mb-3 border-0 border-bottom" type="text" name="lastName" #lastName="ngModel" [ngModel]="usersService.selectedUser.lastName" placeholder="Ingresa tu Apellido"/>
                  <input class="col-12 mb-3 border-0 border-bottom" type="text" name="email" #email="ngModel" [ngModel]="usersService.selectedUser.email" placeholder="Ingresa tu email"/>
                  <input class="col-12 mb-3 border-0 border-bottom" type="text" name="role" #role="ngModel" [ngModel]="usersService.selectedUser.role" placeholder="Ingresa tu Rol"/>
+                 <input class="col-12 mb-3 border-0 border-bottom" type="text" name="tel" #role="ngModel" [ngModel]="usersService.selectedUser.tel" placeholder="Ingresa tu Telefono"/>
+                 <input class="col-12 mb-3 border-0 border-bottom" type="text" name="document" #role="ngModel" [ngModel]="usersService.selectedUser.document" placeholder="Ingresa tu Cedula"/>
 
 <!--             <input class="col-12 mb-3 border-0 border-bottom" type="text" name="password" #password="ngModel" [(ngModel)]="usersService.selectedUser.password" placeholder="Ingresa tu contraseña"/>
                  <input class="col-12 mb-3 border-0 border-bottom" type="text" name="confirmPassword" #password="ngModel" [(ngModel)]="usersService.selectedUser.confirmPassword" placeholder="Confirma tu contraseña"/> -->
@@ -152,10 +154,8 @@
       </h6>
     </div>
   </div> -->
-
   <!-- <div class="d-flex flex-wrap justify-content-center" id="charsContainer"></div> -->
   <!-- Para hacer tarjetas -->
-
   <!-- name = 'Juan';
    lastName = 'Suarez';
    username = 'JuanA';
