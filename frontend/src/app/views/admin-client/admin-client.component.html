@@ -1,0 +1,137 @@
+<div class="container col-sm-10 col-md-6 mt-5">
+  <div class="row justify-content-center m-2">
+    <h2 class="text-center mb-5">Datos del paciente</h2>
+    <form class="d-flex row justify-content-center form-control p-4">
+      <!-- Datos Básicos -->
+      <div class="d-flex row mb-4 p-0">
+        <div class="mb-3 p-0 col-md-6">
+          <label for="inputFirstName" class="form-label">Primer Nombre</label>
+          <input
+            type="email"
+            class="form-control"
+            id="inputFirstName"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3 p-0 col-md-6">
+          <label for="inputSecondName" class="form-label">Segundo Nombre</label>
+          <input
+            type="email"
+            class="form-control"
+            id="inputSecondName"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3 p-0 col-md-6">
+          <label for="exampleapellidos" class="form-label">Apellidos</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleapellidos"
+            aria-describedby="emailHelp"
+          />
+        </div>
+      </div>
+
+      <!-- Datos de contacto -->
+      <div class="d-flex row mb-4 p-0">
+        <div class="mb-3 p-0 col-md-6">
+          <label for="inputEmail" class="form-label">Correo Electrónico</label>
+          <input
+            type="email"
+            class="form-control"
+            id="inputEmail"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3 p-0 col-md-6">
+          <label for="inputPhoneNumber" class="form-label"
+            >Número de Celular</label
+          >
+          <input type="number" class="form-control" id="inputPhoneNumber" />
+        </div>
+      </div>
+
+      <!-- Dirección -->
+      <div class="d-flex row mb-4 p-0">
+        <div class="mb-3 p-0 col-md-6">
+          <label for="inputAddress" class="form-label"
+            >Dirección Principal</label
+          >
+          <input type="text" class="form-control" id="inputAddress" />
+        </div>
+        <div class="mb-3 p-0 col-md-6">
+          <label for="inputAddress2" class="form-label"
+            >Dirección Alternativa</label
+          >
+          <input type="text" class="form-control" id="inputAddress2" />
+        </div>
+        <div class="mb-3 p-0 col-md-6">
+          <label for="inputState" class="form-label">Departamento</label>
+          <select id="inputState" class="form-select">
+            <option selected>Selecione una opción</option>
+            <option *ngFor="let depart of departs">{{ depart }}</option>
+          </select>
+        </div>
+        <div class="mb-3 p-0 col-md-6">
+          <label for="inputCity" class="form-label">Ciudad</label>
+          <input type="text" class="form-control" id="inputCity" />
+        </div>
+      </div>
+
+      <!-- Datos de Consulta -->
+      <div class="d-flex row mb-4 p-0">
+        <div class="mb-3 p-0 col-md-6">
+          <label for="inputPriorityType" class="form-label"
+            >Tipo de Prioridad</label
+          >
+          <select id="inputPriorityType" class="form-select">
+            <option selected>Selecione una opción</option>
+            <option *ngFor="let type of tPriority">{{ type }}</option>
+          </select>
+        </div>
+
+        <div class="mb-3 p-0 col-md-6">
+          <label for="inputValuationType" class="form-label"
+            >Tipo de Valoración</label
+          >
+          <select id="inputValuationType" class="form-select">
+            <option selected>Selecione una opción</option>
+            <option *ngFor="let type of tValuation">{{ type }}</option>
+          </select>
+        </div>
+
+        <div class="mb-3 p-0 col-12">
+          <label for="inputSymptom" class="form-label"
+            >Descrciba sus sintomas de manera breve</label
+          >
+          <textarea class="form-control" id="inputSymptom" rows="3"></textarea>
+        </div>
+      </div>
+
+      <!-- Fecha de Registro -->
+      <div class="d-flex row mb-4 p-0">
+        <div class="mb-3 p-0 col-md-6">
+          <label for="inputDate" class="form-label"
+            >Seleccione el día de su consulta</label
+          >
+          <input type="date" class="form-control" id="inputDate" />
+        </div>
+      </div>
+
+      <div class="d-flex row mb-4 p-0">
+        <app-calendar class="mb-3 p-0 col-12"></app-calendar>
+      </div>
+
+      <div class="d-flex row mb-4 p-0">
+        <div class="mb-3 p-0 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Acepto todos los terminos y condiciones</label
+          >
+        </div>
+        <button type="submit" class="btn btn-primary w-auto">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
