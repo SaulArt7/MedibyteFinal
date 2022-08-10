@@ -4,6 +4,7 @@ import { AdminProductsComponent } from './views/admin-products/admin-products.co
 import { HomeComponent } from './views/home/home.component'; // Se importa sólo con la ruta en Routes:
 import { LoginComponent } from './views/login/login.component';
 import { SignupComponent } from './views/signup/signup.component';
+import { PqrsComponent } from './views/pqrs/pqrs.component';
 import { UserGuard } from './guards/user.guard';
 import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
 import { AdminClientComponent } from './views/admin-client/admin-client.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
 {path: 'adminpanel', component: AdminpanelComponent, canActivate: [UserGuard]},
 {path: 'admin-client', component:AdminClientComponent, canActivate: [UserGuard]},
 {path: 'calendar', component:CalendarComponent},
+{path: 'pqrs', component: PqrsComponent},
 
 // Redireccionamientos o página 404
 {path: '', redirectTo: 'home', pathMatch: 'full'},

@@ -13,6 +13,7 @@ import { AdminClientComponent } from './views/admin-client/admin-client.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { PqrsComponent } from './views/pqrs/pqrs.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     AdminpanelComponent,
     AdminClientComponent,
     CalendarComponent,
+    PqrsComponent
   ],
   imports: [
     BrowserModule,
