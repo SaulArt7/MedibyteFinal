@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
-import { adminClient } from 'src/app/models/user-client';
-
-
-
-/* import { adminCient } from 'src/app/models/user-client'; */
+import { Cita } from 'src/app/models/cita.model';
 
 @Component({
   selector: 'app-admin-client',
@@ -14,24 +10,22 @@ import { adminClient } from 'src/app/models/user-client';
 })
 export class AdminClientComponent implements OnInit {
 
+  constructor(public usersService: UsersService) { }
+  ngOnInit(): void {
+  }
+
   departs: string[] = ['Amazonas', 'Antioquia', 'Arauca', 'Atlántico', 'Bolívar', 'Boyacá', 'Caldas', 'Caquetá', 'Casanare', 'Cauca', 'Cesar', 'Chocó', 'Córdoba', 'Cundinamarca', 'Guainía', 'Guaviare', 'Huila', 'La Guajira', 'Magdalena', 'Meta', 'Nariño', 'Norte de Santander', 'Putumayo', 'Quindío', 'Risaralda', 'San Andrés y Providencia', 'Santander', 'Sucre', 'Tolima', 'Valle del Cauca', 'Vaupés', 'Vichada']
 
   tValuation: string[] = ['Urgente', 'Prioritaria', 'Regular']
 
   tPriority: string[] = ['Primera vez', 'Control']
-  
 
-  constructor(public usersService: UsersService, public form : NgForm) { }
 
-  ngOnInit(): void {
-    console.log()
-  }
 
-  
 
   formClient(form: NgForm){
-    
+
   }
-  
+
 
 }

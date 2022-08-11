@@ -12,33 +12,22 @@
           <label for="inputFirstName" class="form-label">Primer Nombre</label>
           <input
             type="email"
-            class="form-control"
+            class="form-control text-muted"
             id="inputFirstName"
             aria-describedby="emailHelp"
             value="{{ this.usersService.decodeToken().data.name }}"
-            readonly
+            readonly="true"
           />
         </div>
-        <!-- <div class="mb-3 p-0 col-md-6">
-          <label for="inputSecondName" class="form-label">Segundo Nombre</label>
-          <input
-            type="email"
-            class="form-control"
-            id="inputSecondName"
-            aria-describedby="emailHelp"
-            value="{{ this.usersService.decodeToken().data.name }}"
-            readonly
-          />
-        </div> -->
         <div class="mb-3 p-1 col-md-6">
           <label for="exampleapellidos" class="form-label">Apellidos</label>
           <input
             type="email"
-            class="form-control"
+            class="form-control text-muted"
             id="exampleapellidos"
             aria-describedby="emailHelp"
             value="{{ this.usersService.decodeToken().data.lastName }}"
-            readonly
+            readonly="true"
           />
         </div>
       </div>
@@ -49,11 +38,11 @@
           <label for="inputEmail" class="form-label">Correo Electrónico</label>
           <input
             type="email"
-            class="form-control"
+            class="form-control text-muted"
             id="inputEmail"
             aria-describedby="emailHelp"
             value="{{ this.usersService.decodeToken().data.email }}"
-            readonly
+            readonly="true"
           />
         </div>
         <div class="mb-3 p-1 col-md-6">
@@ -62,10 +51,10 @@
           >
           <input
             type="number"
-            class="form-control"
+            class="form-control text-muted"
             id="inputPhoneNumber"
-            value="{{ this.usersService.decodeToken().data.tel}}"
-            readonly
+            value="{{ this.usersService.decodeToken().data.tel }}"
+            readonly="true"
           />
         </div>
       </div>

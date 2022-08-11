@@ -25,5 +25,3 @@ export class UserGuard implements CanActivate {
     return false;
   }
 }
-
-
