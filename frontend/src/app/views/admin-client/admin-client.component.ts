@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
 import { UsersService } from 'src/app/services/users.service';
 import { adminClient } from 'src/app/models/user-client';
+import { NgForm } from '@angular/forms';
 
 
 
@@ -21,7 +22,7 @@ export class AdminClientComponent implements OnInit {
   tPriority: string[] = ['Primera vez', 'Control']
   
 
-  constructor(public usersService: UsersService, public form : NgForm) { }
+  constructor(public usersService: UsersService) { }
 
   ngOnInit(): void {
     console.log()
@@ -30,7 +31,7 @@ export class AdminClientComponent implements OnInit {
   
 
   formClient(form: NgForm){
-    
+    console.log(form.value)
   }
   
 

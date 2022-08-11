@@ -7,12 +7,13 @@ import { SignupComponent } from './views/signup/signup.component';
 import { LoginComponent } from './views/login/login.component';
 import { HomeComponent } from './views/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { AdminProductsComponent } from './views/admin-products/admin-products.component';
 import { AdminClientComponent } from './views/admin-client/admin-client.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
