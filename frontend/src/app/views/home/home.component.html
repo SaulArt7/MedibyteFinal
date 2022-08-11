@@ -324,25 +324,67 @@
           <p class="text-center">Escríbenos y en breve nos pondremos en contacto contigo</p>
         </div>
         <div>
-          <form action="#" class="mx-3" >
+          <form  class="mx-3" #pqrsForm="ngForm">
             <div class="mb-3 row">
-              <input class="p-2" type="text" placeholder="Nombres y Apellidos">
+
+              <input  type="hidden" 
+              id="_id"
+              name="_id"
+              #_id="ngModel"
+              [ngModel]="pqrsService.currentForm._id"
+              >
+
+              <input class="p-2" type="text" placeholder="Nombres y Apellidos" for="fullName"
+              id="fullName"
+              name="fullName"
+              #fullName="ngModel"
+              [ngModel]="pqrsService.currentForm.fullName"
+              >
             </div>
             
             <div class="mb-3 row">
-              <input class="p-2" type="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo Electronico">
+              <input class="p-2" type="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo Electronico" for="email"
+              id="email"
+              name="email"
+              #email="ngModel"
+              [ngModel]="pqrsService.currentForm.email"
+              >
             </div>
   
             <div class="mb-3 row">
-              <input class="p-2" type="text"  placeholder="Asunto">
+              <input class="p-2" type="text"  placeholder="Asunto" for="topic"
+              id="topic"
+              name="topic"
+              #topic="ngModel"
+              [ngModel]="pqrsService.currentForm.topic"
+              >
             </div>
   
             <div class="mb-3 row">
-              <textarea class="p-2" placeholder="Mensaje" id="floatingTextarea2" style="height: 100px"></textarea>
+              <textarea class="p-2" placeholder="Mensaje"  style="height: 100px" type="text" for="message"
+              id="message"
+              name="message"
+              #message="ngModel"
+              [ngModel]="pqrsService.currentForm.message"
+              ></textarea>
             </div>
+
+            <input  type="hidden" 
+              id="condition"
+              name="condition"
+              #condition="ngModel"
+              [ngModel]="pqrsService.currentForm.condition"
+            >
+
+            <input  type="hidden" 
+              id="answer"
+              name="answer"
+              #answer="ngModel"
+              [ngModel]="pqrsService.currentForm.answer"
+              >
   
             <div class="d-grid gap-2  ">
-              <input class="btn btn dark-blue text-white" type="submit" value="Enviar">  
+              <button class="btn btn dark-blue text-white" type="submit" (click)="createForm(pqrsForm)"> Enviar </button>
             </div>
           </form>
         </div>

@@ -13,10 +13,10 @@ export class Form {
       fullName = '',
       email = '',
       topic = '',
-      message = '',
+      message = "",
       isActive = true,
-      condition = '',
-      answer = ''
+      condition = 'En espera',
+      answer = 'Esperando respuesta'
     ) {
       this._id = _id;
       this.fullName = fullName;

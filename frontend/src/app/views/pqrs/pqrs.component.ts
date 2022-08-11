@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
+
+
 
 @Component({
   selector: 'app-pqrs',
@@ -11,6 +13,7 @@ export class PqrsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
