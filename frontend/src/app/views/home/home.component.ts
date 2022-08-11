@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
        
       const {_id, fullName, email, topic, message, condition, answer } = form.value
 
-      if(!fullName || !email || !topic || !message || condition==='En espera' || answer==='Esperando respuesta'){
+      if(!fullName || !email || !topic || !message ){
         alert('Debes diligenciar todos los campos')
         return
       }
@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
 
    const { fullName, email, topic, message, condition, answer } = form.value
 
-   if(!fullName || !email || !topic || !message || condition==='En espera' || answer==='Esperando respuesta'){
+   if(!fullName || !email || !topic || !message ){
      alert('Debes diligenciar todos los campos')
      return
    }

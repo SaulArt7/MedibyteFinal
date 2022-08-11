@@ -36,7 +36,7 @@
       </div>
 
 
-      <div *ngIf="usersService.decodeToken().data.role === 'cliente'" >
+      <div *ngIf="this.usersService.decodeToken().data.role === 'cliente'" >
 
         <div class="navbar-nav ms-auto">
           <a class="nav-link underline" aria-current="page" href="/home">Inicio</a>
@@ -53,7 +53,7 @@
       </div>
 
 
-      <div *ngIf="usersService.decodeToken().data.role === 'SuperAdmin'" >
+      <div *ngIf="this.usersService.decodeToken().data.role === 'SuperAdmin'" >
 
         <div class="navbar-nav ms-auto">
           <a class="nav-link underline me-10" aria-current="page">{{ this.usersService.decodeToken().data.role }}</a>
@@ -67,7 +67,7 @@
       </div>
 
 
-      <div *ngIf="usersService.decodeToken().data.role === 'AdminPQRS'" >
+      <div *ngIf="this.usersService.decodeToken().data.role === 'AdminPQRS'" >
 
         <div class="navbar-nav ms-auto">
           <a class="nav-link underline me-10" aria-current="page">{{ this.usersService.decodeToken().data.role }}</a>
@@ -79,7 +79,7 @@
 
       </div>
 
-      <div *ngIf="usersService.decodeToken().data.role === 'AdminProductos'" >
+      <div *ngIf="this.usersService.decodeToken().data.role === 'AdminProductos'" >
 
         <div class="navbar-nav ms-auto">
           <a class="nav-link underline me-10" aria-current="page">{{ this.usersService.decodeToken().data.role }}</a>
@@ -93,7 +93,7 @@
       </div>
 
 
-      <div *ngIf="usersService.decodeToken().data.role === 'Medico'" >
+      <div *ngIf="this.usersService.decodeToken().data.role === 'Medico'" >
 
         <div class="navbar-nav ms-auto">
           <a class="nav-link underline me-10" aria-current="page">{{ this.usersService.decodeToken().data.role }}</a>
