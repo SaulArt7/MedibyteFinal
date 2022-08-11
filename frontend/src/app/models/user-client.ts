@@ -1,4 +1,4 @@
-export class adminCient {
+export class adminClient {
     addres: string;
     adressAlt: string;
     departament: string;
