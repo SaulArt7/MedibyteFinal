@@ -8,27 +8,22 @@
           <label for="inputFirstName" class="form-label">Primer Nombre</label>
           <input
             type="email"
-            class="form-control"
+            class="form-control text-muted"
             id="inputFirstName"
             aria-describedby="emailHelp"
-          />
-        </div>
-        <div class="mb-3 p-0 col-md-6">
-          <label for="inputSecondName" class="form-label">Segundo Nombre</label>
-          <input
-            type="email"
-            class="form-control"
-            id="inputSecondName"
-            aria-describedby="emailHelp"
+            value="{{ this.usersService.decodeToken().data.name }}"
+            readonly="true"
           />
         </div>
         <div class="mb-3 p-0 col-md-6">
           <label for="exampleapellidos" class="form-label">Apellidos</label>
           <input
             type="email"
-            class="form-control"
+            class="form-control text-muted"
             id="exampleapellidos"
             aria-describedby="emailHelp"
+            value="{{ this.usersService.decodeToken().data.lastName }}"
+            readonly="true"
           />
         </div>
       </div>
@@ -39,16 +34,19 @@
           <label for="inputEmail" class="form-label">Correo Electrónico</label>
           <input
             type="email"
-            class="form-control"
+            class="form-control text-muted"
             id="inputEmail"
             aria-describedby="emailHelp"
+            value="{{ this.usersService.decodeToken().data.email }}"
+            readonly="true"
           />
         </div>
         <div class="mb-3 p-0 col-md-6">
           <label for="inputPhoneNumber" class="form-label"
             >Número de Celular</label
           >
-          <input type="number" class="form-control" id="inputPhoneNumber" />
+          <input type="number" class="form-control text-muted" id="inputPhoneNumber"  value="{{ this.usersService.decodeToken().data.tel }}"
+          readonly="true" />
         </div>
       </div>
 
@@ -135,3 +133,4 @@
     </form>
   </div>
 </div>
+
