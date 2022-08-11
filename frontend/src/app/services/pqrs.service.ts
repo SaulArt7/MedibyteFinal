@@ -26,5 +26,7 @@ export class PqrsService {
     return this.http.post(`${this.URI_FORM}/create`,data)
    }
 
-   
+   updateForm(id: string, data: any){
+    return this.http.put (`${this.URI_FORM}/update/${id}`,data)
+   }
 }
