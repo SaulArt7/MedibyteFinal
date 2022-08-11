@@ -6,9 +6,11 @@ import { LoginComponent } from './views/login/login.component';
 import { SignupComponent } from './views/signup/signup.component';
 import { PqrsComponent } from './views/pqrs/pqrs.component';
 import { UserGuard } from './guards/user.guard';
-import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
-import { AdminClientComponent } from './views/admin-client/admin-client.component';
+/* import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
+import { AdminClientComponent } from './views/admin-client/admin-client.component'; */
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { AdminClientComponent } from './views/admin-client/admin-client.component';
+import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
 
 const routes: Routes = [
 // Rutas a componentes
