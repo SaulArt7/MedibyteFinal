@@ -9,6 +9,7 @@ import { UserGuard } from './guards/user.guard';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { AdminClientComponent } from './views/admin-client/admin-client.component';
 import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
+import { TiendaComponent } from './views/tienda/tienda.component';
 
 const routes: Routes = [
 // Rutas a componentes
@@ -20,6 +21,7 @@ const routes: Routes = [
 {path: 'admin-client', component:AdminClientComponent, canActivate: [UserGuard]},
 {path: 'calendar', component:CalendarComponent},
 {path: 'pqrs', component: PqrsComponent},
+{path: 'tienda', component: TiendaComponent},
 
 // Redireccionamientos o página 404
 {path: '', redirectTo: 'home', pathMatch: 'full'},
