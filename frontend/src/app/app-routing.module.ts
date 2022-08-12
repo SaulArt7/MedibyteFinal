@@ -24,11 +24,11 @@ const routes: Routes = [
 {path: 'login', component: LoginComponent},
 {path: 'signup', component: SignupComponent},
 {path: 'home', component: HomeComponent}, // Sin Slash
-{path: 'admin-products',component:AdminProductsComponent, canActivate: [UserGuard, AdminProductosGuard]},
+{path: 'admin-products',component:AdminProductsComponent, canActivate: [AdminProductosGuard]},
 {path: 'adminpanel', component: AdminpanelComponent, canActivate: [SuperAdminGuard]},
-{path: 'admin-client', component:AdminClientComponent, canActivate: [UserGuard, SuperAdminGuard]},
+{path: 'admin-client', component:AdminClientComponent, canActivate: [SuperAdminGuard]},
 {path: 'calendar', component:CalendarComponent},
-{path: 'pqrs', component: PqrsComponent, canActivate: [UserGuard, AdminPQRSGuard]},
+{path: 'pqrs', component: PqrsComponent, canActivate: [AdminPQRSGuard]},
 
 
 // Redireccionamientos o página 404
