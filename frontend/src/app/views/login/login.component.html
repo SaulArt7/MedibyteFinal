@@ -1,24 +1,114 @@
-<div class="container-fluid">
-  <div class="row justify-content-center text-center">
-    <div class="col-4">
-      <div class="m-4"  style="width: 18rem">
-        <div class="form-control">
-        <form (ngSubmit)="loginUser(loginForm)" #loginForm="ngForm">
-            <div class="row mt-3">
-              <div class="col-12">
-                <input class="col-12 mb-3 border-0 border-bottom" type="text" id="input1" name="email" ngModel required placeholder="Ingresa tu email"/>
-               <input class="col-12 mb-3 border-0 border-bottom" type="text" id="input2" name="password" ngModel placeholder="Ingresa tu contraseña"/>
-              </div>
-              <div class="action">
-                <div class="input-field col-12">
-                  <button class="btn left btn-success m-2" type="submit">Logearme</button>
-                 <button class="btn right btn-primary m-2" (click)="resetForm(loginForm)">Limpiar</button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="shortcut icon" href="assets/logos/logo pagina.png" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <title>Login MediByte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <!-- Login -->
+  <section id="inicio">
+    <div class="container d-flex justify-content-center pt-1">
+      <div class="container1 d-flex justify-content-center pt-1">
+        <img class="img1" src="assets/logos/MediByte.png" alt="Logo" />
       </div>
     </div>
-  </div>
-</div>
+    <form id="PruebaAlertas" (ngSubmit)="loginUser(loginForm)" #loginForm="ngForm">
+    <div class="container2">
+      <div class="container2">
+        <div class="container2 d-flexjustify-content-center forma1">
+          <div class="container d-flex justify-content-center">
+            <h3 class="tituloc mt-3">Bienvenido</h3>
+          </div>
+          <div class="container d-flex justify-content-center">
+            <img
+              src="assets/images/linea.png"
+              alt="linealogin"
+              class="linealogin"
+            />
+          </div>
+          <div class="mb-4 d-flex row justify-content-center mt-3">
+            <input
+            type="text" 
+            id="input1" 
+            name="email" 
+            ngModel required placeholder="       Ingresar"
+            class="form-control user_placeholder"
+            />
+          </div>
+          <div class="mb-2 d-flex row justify-content-center">
+            <input
+            id="input2" 
+            name="password" 
+            ngModel
+            type="password"
+            class="form-control user_placeholder2"
+            ngModel placeholder="       Contraseña"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <a class="link active mt-4 fc1 me-2" aria-current="page" href="/Medibyte/index.html"
+              >Olvidaste tu Contraseña?</a
+            >
+            <div class="d-flex align-items-center">
+              <button class="btn btn-primary mt-3 mb-2" type="submit">Ingresar</button>
+          </div>
+          <!-- <div id="alertSI" class="alert alert-success alert-dismissible fade show" role="alert">Datos Correctos, Bienvenido!</div> -->
+          </div>
+          <div class="d-flex justify-content-center">
+            <a
+              class="link active mt-0 mb-2 fc1"
+              aria-current="page"
+              href="/signup"
+              >Regístrate</a
+            >
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </form>
+  </section>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+
+
+<!--   <script>
+    $(document).ready(function() {
+      $("#alertSI").hide();
+      $("#alertNO").hide();
+      $("#PruebaAlertas").submit(function(e) {
+        e.preventDefault();
+        input1 = $.trim($("#input1").val());
+        input2 = $.trim($("#input2").val());
+        if(input1.length > 0 && input2.length > 0){
+          $("alertSI").fadeTo(2000, 500).slideUp(500, function () {
+            $("alertSI").slideUp(500);
+          });
+        } else {
+          $("alertNO").fadeTo(2000, 500).slideUp(500, function () {
+            $("alertNO").slideUp(500);   
+        });
+      }
+    })
+    })
+
+  </script> -->
+</body>

@@ -3,7 +3,10 @@ const dotenv = require('dotenv')
 const cors = require('cors')
 const morgan = require('morgan')
 
+
+
 const app = express() // Constante para utilizar las funciones de express
+
 dotenv.config() // Para traer las variables de entorno.
 const port = process.env.PORT || 5001 // Constante para puerto desde .env o en 5001 (lo usará si no exite el archivo .env o no encuentra la variable) ***Confirmar
 
@@ -19,10 +22,14 @@ app.use(cors())
 
 require('./database.js')
 
+
 const productRoutes=require('./routes/product.routes')
 const userRoutes=require('./routes/user.routes')
+
 app.use('/api/products',productRoutes)
 app.use('/api/users',userRoutes)
+app.use('/api/form', require('./routes/form'))
+
 
 app.listen(port, () => {
     console.log('Api corriendo en el puerto', port)

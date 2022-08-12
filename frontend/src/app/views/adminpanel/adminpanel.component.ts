@@ -3,30 +3,19 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
 import { UsersService } from 'src/app/services/users.service';
 
-// import { CommonModule } from '@angular/common';
-
 declare var M: any;
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
+  selector: 'app-adminpanel',
+  templateUrl: './adminpanel.component.html',
+  styleUrls: ['./adminpanel.component.css'],
   providers: [UsersService],
 })
-export class SignupComponent implements OnInit {
-  // name = 'Michael Cocuy';
-  result = 0;
-  // name = '';
-  // lastName = '';
-  // username = '';
-  // email = '';
-  // role = '';
-  // fechaCreacionUsuario = '';
-  // updatedAt = '';
-  // isActive = '';
-  // _id = '';
+export class AdminpanelComponent implements OnInit {
 
-  constructor(public usersService: UsersService) {}
+  result = 0;
+
+  constructor(public usersService: UsersService) { }
 
   ngOnInit(): void {
     console.log('Hola desde Init de Home Component');
@@ -56,8 +45,8 @@ export class SignupComponent implements OnInit {
       delete form.value._id; // Por error al intenar enviar un Usuario con ID en ''
 
       // Validaciones del profe para verificar si algún campo está vacío en el formualario:
-      let { email, name, lastName, password, confirmPassword, document, tel} = form.value;
-      if (!email || !name || !lastName || !password || !confirmPassword || !document || !tel) {
+      let { email, name, lastName, password, confirmPassword } = form.value;
+      if (!email || !name || !lastName || !password || !confirmPassword) {
         alert('Diligencie todos los campos');
       }
       if (password !== confirmPassword) {
@@ -107,38 +96,3 @@ export class SignupComponent implements OnInit {
   }
 }
 
-// for (let index = 0; index < this.userService.users.user.length; index++) {
-//   an = document.getElementById('charsContainer').innerHTML += `
-
-//   <div class="card m-4" style="width: 18rem;">
-//     <img src="" class="card-img-top" alt="...">
-//     <div class="card-body">
-//       <h5 class="card-title">${data.name}</h5>
-//       <p class="card-text">Genero: ${data.gender}</p>
-//       <p class="card-text">Ubicacion: ${data.location.name}</p>
-//       <p class="card-text">Estado: ${data.status}</p>
-//       <p class="card-text">Especie: ${data.species}</p>
-//       <p class="card-text h4">Estado: ${data.id}</p>
-//     </div>
-//   </div>
-//   `
-
-// generarTarjeta(): void {
-//   += `
-
-//
-//           `
-//         }
-//        }
-
-// Previo funcionando con un sólo usuario:
-// this.name = typeof(this.userService.users)
-// this.name = this.userService.users.user[0].name;
-// this.lastName = this.userService.users.user[0].lastName;
-// this.username = this.userService.users.user[0].username;
-// this.email = this.userService.users.user[0].email;
-// this.role = this.userService.users.user[0].role;
-// this.fechaCreacionUsuario = this.userService.users.user[0].createdAt;
-// this.updatedAt = this.userService.users.user[0].updatedAt;
-// this.isActive = this.userService.users.user[0].isActive;
-// this._id = this.userService.users.user[0]._id;
