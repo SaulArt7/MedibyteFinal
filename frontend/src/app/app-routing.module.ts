@@ -6,23 +6,33 @@ import { LoginComponent } from './views/login/login.component';
 import { SignupComponent } from './views/signup/signup.component';
 import { PqrsComponent } from './views/pqrs/pqrs.component';
 import { UserGuard } from './guards/user.guard';
+import { SuperAdminGuard } from './guards/super-admin.guard';
+import { AdminPQRSGuard } from './guards/admin-pqrs.guard';
+import { MedicoGuard } from "./guards/medico.guard";
+import { AdminProductosGuard } from './guards/admin-productos.guard';
+
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { AdminClientComponent } from './views/admin-client/admin-client.component';
 import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
+
+
+
+
 
 const routes: Routes = [
 // Rutas a componentes
 {path: 'login', component: LoginComponent},
 {path: 'signup', component: SignupComponent},
 {path: 'home', component: HomeComponent}, // Sin Slash
-{path: 'admin-products',component:AdminProductsComponent, canActivate: [UserGuard]},
-{path: 'adminpanel', component: AdminpanelComponent, canActivate: [UserGuard]},
-{path: 'admin-client', component:AdminClientComponent, canActivate: [UserGuard]},
+{path: 'admin-products',component:AdminProductsComponent, canActivate: [UserGuard, AdminProductosGuard]},
+{path: 'adminpanel', component: AdminpanelComponent, canActivate: [SuperAdminGuard]},
+{path: 'admin-client', component:AdminClientComponent, canActivate: [UserGuard, SuperAdminGuard]},
 {path: 'calendar', component:CalendarComponent},
-{path: 'pqrs', component: PqrsComponent},
+{path: 'pqrs', component: PqrsComponent, canActivate: [UserGuard, AdminPQRSGuard]},
+
 
 // Redireccionamientos o página 404
-{path: '', redirectTo: 'home', pathMatch: 'full'},
+{path: '', redirectTo: '/home', pathMatch: 'full'},
 {path: '**', component: HomeComponent}
 // Aquí podemos crear la página 404: No encontrada la ruta.
 ];

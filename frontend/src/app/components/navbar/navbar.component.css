@@ -29,7 +29,7 @@
     }
 
     .image {
-        background-image: url('assets/images/humanos.jpg');
+        background-image: url('../../../assets/images/humanos.jpg');
         background-repeat: no-repeat;
         background-size: 100% 115%;
         opacity: 0.6;
@@ -89,4 +89,12 @@
 
     .responsive {
         width: max-content;
+    }
+
+    .me-10 {
+        margin-right: 220px !important;
+    }
+
+    .me-15 {
+        margin-right: 450px !important;
     }

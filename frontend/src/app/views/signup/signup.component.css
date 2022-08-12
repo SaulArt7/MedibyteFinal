@@ -146,41 +146,10 @@
     border-color: white;
 }
 
-.user_placeholder::placeholder {
-    background-image: url(assets/icons/user.png);
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    background-position: left center;
-
-}
-
-.user_placeholder2::placeholder {
-    background-image: url(assets/icons/lock.png);
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    background-position: left center;
-
-
-}
-
-.logologin {
-
-    width: 80px !important;
-    max-width: 1000px;
-    min-width: 500px !important;
-    margin: auto;
-}
 .linearegistro {
     width: 118%;
 }
 
-@media (max-width: 1200px){
-
-    .logologin {
-        display:contents;
-        justify-content: center;
-    }
-}
 
 .img1 {
     max-width: 100%;
@@ -195,13 +164,6 @@
     width: 100%;
     margin: 0 auto;
 
-}
-
-
-.linealogin {
-    height: 17px !important;
-    max-width: 100%;
-    min-height: 100%;
 }
 
 .ms-11 {
