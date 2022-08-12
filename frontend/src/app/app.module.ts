@@ -15,6 +15,7 @@ import { FormsModule} from '@angular/forms';
 import { AdminProductsComponent } from './views/admin-products/admin-products.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
+import { TiendaComponent } from './views/tienda/tienda.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
     HomeComponent,
     AdminProductsComponent,
     FooterComponent,
-    AdminpanelComponent
+    AdminpanelComponent,
+    TiendaComponent
   ],
   imports: [
     BrowserModule,

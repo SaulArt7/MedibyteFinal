@@ -7,6 +7,7 @@ import { SignupComponent } from './views/signup/signup.component';
 
 import { UserGuard } from './guards/user.guard';
 import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
+import { TiendaComponent } from './views/tienda/tienda.component';
 
 const routes: Routes = [
 // Rutas a componentes
@@ -15,6 +16,7 @@ const routes: Routes = [
 {path: 'home', component: HomeComponent}, // Sin Slash
 {path: 'admin-products',component:AdminProductsComponent, canActivate: [UserGuard]},
 {path: 'adminpanel', component: AdminpanelComponent, canActivate: [UserGuard]},
+{path: 'tienda', component: TiendaComponent},
 // Redireccionamientos o página 404
 {path: '', redirectTo: 'home', pathMatch: 'full'},
 {path: '**', component: HomeComponent}
