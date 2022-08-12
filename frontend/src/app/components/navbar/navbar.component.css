@@ -90,3 +90,11 @@
     .responsive {
         width: max-content;
     }
+
+    .me-10 {
+        margin-right: 220px !important;
+    }
+
+    .me-15 {
+        margin-right: 450px !important;
+    }
