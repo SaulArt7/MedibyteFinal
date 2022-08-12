@@ -28,6 +28,8 @@ const userRoutes=require('./routes/user.routes')
 
 app.use('/api/products',productRoutes)
 app.use('/api/users',userRoutes)
+app.use('/api/form', require('./routes/form'))
+
 
 app.listen(port, () => {
     console.log('Api corriendo en el puerto', port)

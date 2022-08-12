@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { UsersService } from 'src/app/services/users.service';
+import { Cita } from 'src/app/models/cita.model';
 
 @Component({
   selector: 'app-admin-client',
@@ -7,10 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminClientComponent implements OnInit {
 
-
-
-  constructor() { }
-
+  constructor(public usersService: UsersService) { }
   ngOnInit(): void {
   }
 
@@ -19,5 +19,13 @@ export class AdminClientComponent implements OnInit {
   tValuation: string[] = ['Urgente', 'Prioritaria', 'Regular']
 
   tPriority: string[] = ['Primera vez', 'Control']
+
+
+
+
+  formClient(form: NgForm){
+
+  }
+
 
 }

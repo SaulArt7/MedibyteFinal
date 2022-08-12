@@ -1,111 +1,152 @@
 <div class="container col-sm-10 col-md-6 mt-5">
   <div class="row justify-content-center m-2">
     <h2 class="text-center mb-5">Datos del paciente</h2>
-    <form class="d-flex row justify-content-center form-control p-4">
+    <form
+      class="d-flex row justify-content-center form-control p-4"
+      (ngSubmit)="formClient(form)"
+      #form="ngForm"
+    >
       <!-- Datos Básicos -->
       <div class="d-flex row mb-4 p-0">
-        <div class="mb-3 p-0 col-md-6">
+        <div class="mb-3 p-1 col-md-6">
           <label for="inputFirstName" class="form-label">Primer Nombre</label>
           <input
             type="email"
-            class="form-control"
+            class="form-control text-muted"
             id="inputFirstName"
             aria-describedby="emailHelp"
+            value="{{ this.usersService.decodeToken().data.name }}"
+            readonly="true"
           />
         </div>
-        <div class="mb-3 p-0 col-md-6">
-          <label for="inputSecondName" class="form-label">Segundo Nombre</label>
-          <input
-            type="email"
-            class="form-control"
-            id="inputSecondName"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div class="mb-3 p-0 col-md-6">
+        <div class="mb-3 p-1 col-md-6">
           <label for="exampleapellidos" class="form-label">Apellidos</label>
           <input
             type="email"
-            class="form-control"
+            class="form-control text-muted"
             id="exampleapellidos"
             aria-describedby="emailHelp"
+            value="{{ this.usersService.decodeToken().data.lastName }}"
+            readonly="true"
           />
         </div>
       </div>
 
       <!-- Datos de contacto -->
       <div class="d-flex row mb-4 p-0">
-        <div class="mb-3 p-0 col-md-6">
+        <div class="mb-3 p-1 col-md-6">
           <label for="inputEmail" class="form-label">Correo Electrónico</label>
           <input
             type="email"
-            class="form-control"
+            class="form-control text-muted"
             id="inputEmail"
             aria-describedby="emailHelp"
+            value="{{ this.usersService.decodeToken().data.email }}"
+            readonly="true"
           />
         </div>
-        <div class="mb-3 p-0 col-md-6">
+        <div class="mb-3 p-1 col-md-6">
           <label for="inputPhoneNumber" class="form-label"
             >Número de Celular</label
           >
-          <input type="number" class="form-control" id="inputPhoneNumber" />
+          <input
+            type="number"
+            class="form-control text-muted"
+            id="inputPhoneNumber"
+            value="{{ this.usersService.decodeToken().data.tel }}"
+            readonly="true"
+          />
         </div>
       </div>
 
       <!-- Dirección -->
       <div class="d-flex row mb-4 p-0">
-        <div class="mb-3 p-0 col-md-6">
+        <div class="mb-3 p-1 col-md-6">
           <label for="inputAddress" class="form-label"
             >Dirección Principal</label
           >
-          <input type="text" class="form-control" id="inputAddress" />
+          <input
+            type="text"
+            class="form-control"
+            id="inputAddress"
+            name="address"
+            #addres="ngModel"
+            ngModel=""
+          />
         </div>
-        <div class="mb-3 p-0 col-md-6">
+        <div class="mb-3 p-1 col-md-6">
           <label for="inputAddress2" class="form-label"
             >Dirección Alternativa</label
           >
-          <input type="text" class="form-control" id="inputAddress2" />
+          <input
+            type="text"
+            class="form-control"
+            id="inputAddress2"
+            name="addres2"
+            #addres2="ngModel"
+            ngModel=""
+          />
         </div>
-        <div class="mb-3 p-0 col-md-6">
+        <div class="mb-3 p-1 col-md-6">
           <label for="inputState" class="form-label">Departamento</label>
           <select id="inputState" class="form-select">
             <option selected>Selecione una opción</option>
-            <option *ngFor="let depart of departs">{{ depart }}</option>
+            <option *ngFor="let depart of departs">
+              {{ depart }}
+            </option>
           </select>
         </div>
-        <div class="mb-3 p-0 col-md-6">
+        <div class="mb-3 p-1 col-md-6">
           <label for="inputCity" class="form-label">Ciudad</label>
-          <input type="text" class="form-control" id="inputCity" />
+          <input
+            type="text"
+            class="form-control"
+            id="inputCity"
+            name="city"
+            #city="ngModel"
+            ngModel=""
+          />
         </div>
       </div>
 
       <!-- Datos de Consulta -->
       <div class="d-flex row mb-4 p-0">
-        <div class="mb-3 p-0 col-md-6">
+        <div class="mb-3 p-1 col-md-6">
           <label for="inputPriorityType" class="form-label"
             >Tipo de Prioridad</label
           >
           <select id="inputPriorityType" class="form-select">
             <option selected>Selecione una opción</option>
-            <option *ngFor="let type of tPriority">{{ type }}</option>
+            <option *ngFor="let type of tPriority">
+              {{ type }}
+            </option>
           </select>
         </div>
 
-        <div class="mb-3 p-0 col-md-6">
+        <div class="mb-3 p-1 col-md-6">
           <label for="inputValuationType" class="form-label"
             >Tipo de Valoración</label
           >
           <select id="inputValuationType" class="form-select">
             <option selected>Selecione una opción</option>
-            <option *ngFor="let type of tValuation">{{ type }}</option>
+            <option *ngFor="let type of tValuation">
+              {{ type }}
+            </option>
           </select>
         </div>
 
-        <div class="mb-3 p-0 col-12">
+        <div class="mb-3 p-1 col-12">
           <label for="inputSymptom" class="form-label"
             >Descrciba sus sintomas de manera breve</label
           >
-          <textarea class="form-control" id="inputSymptom" rows="3"></textarea>
+          <textarea
+            class="form-control"
+            id="inputSymptom"
+            rows="3"
+            name="symptom"
+            #symptom="ngModel"
+            ngModel=""
+          ></textarea>
         </div>
       </div>
 
@@ -115,7 +156,14 @@
           <label for="inputDate" class="form-label"
             >Seleccione el día de su consulta</label
           >
-          <input type="date" class="form-control" id="inputDate" />
+          <input
+            type="date"
+            class="form-control"
+            id="inputDate"
+            name="inputDate"
+            #inputDate="ngModel"
+            ngModel=""
+          />
         </div>
       </div>
 
@@ -130,7 +178,13 @@
             >Acepto todos los terminos y condiciones</label
           >
         </div>
-        <button type="submit" class="btn btn-primary w-auto">Submit</button>
+        <button
+          type="submit"
+          class="btn btn-primary w-auto"
+          (click)="(formClient)"
+        >
+          Submit
+        </button>
       </div>
     </form>
   </div>

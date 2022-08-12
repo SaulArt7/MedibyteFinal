@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import * as moment from "moment";
 
@@ -19,14 +20,21 @@ export class CalendarComponent implements OnInit {
     "Domingo"
   ];
 
+  citasDisp: string[] /* ['2022-08-01', '2022-08-02', '2022-08-03'] */
+  diasMensuales: string[]
 
   monthSelect: any[];
   dateSelect: any;
   dateValue: any;
 
+
+
+
   constructor() {
-     this.monthSelect = []
-   }
+    this.monthSelect = []
+    this.citasDisp = ['2022-08-01','2022-08-02','2022-08-03']
+    this.diasMensuales = []
+  }
 
   ngOnInit(): void {
     this.getDaysFromDate(8, 2022)
@@ -43,15 +51,41 @@ export class CalendarComponent implements OnInit {
 
     const arrayDays = Object.keys([...Array(numberDays)]).map((a: any) => {
       a = parseInt(a) + 1;
-      const dayObject = moment(`${year}-${month}-${a}`);
-      return {
-        name: dayObject.format("dddd"),
+      const dayObject = moment(`${year}-${month}-${a}`, false);
+
+      const fecha = {
+        name: dayObject.format("YYYY-MM-DD"),
         value: a,
-        indexWeek: dayObject.isoWeekday()
-      };
+        //indexWeek: dayObject.isoWeekday()
+      }
+
+      this.diasMensuales.push(fecha.name)
+
+
+
+      /* if(diafecha===this.citasDisp){
+        console.log('disponibles')
+      }else{
+        console.log('ocupado')
+      } */
+
+      /* const dias = Object.values(dayObject).map((day) => {
+        if (dayObject.format("YYYY-MM-DD")===this.citasDisp) {
+          console.log('disponibles')
+      }else{
+        console.log('ocupado')
+      }
+      })
+      console.log(dias) */
+      console.log(this.diasMensuales)
+      return fecha;
+
     });
 
     this.monthSelect = arrayDays;
+    console.log(typeof (this.diasMensuales))
+
+
   }
 
   changeMonth(flag: number) {
@@ -70,6 +104,7 @@ export class CalendarComponent implements OnInit {
     const objectDate = moment(parse)
     this.dateValue = objectDate;
 
+    
 
   }
 

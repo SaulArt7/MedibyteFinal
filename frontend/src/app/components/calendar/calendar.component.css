@@ -21,9 +21,10 @@
 
 .header-calendar button {
     cursor: pointer;
-    background-color: #656568;
+    background-color: transparent;
     padding: .1rem;
     border: none;
+    font-weight: bold;
 }
 
 ol {
@@ -67,4 +68,3 @@ li {
     font-weight: bold;
     font-size: .8rem;
 }
-
