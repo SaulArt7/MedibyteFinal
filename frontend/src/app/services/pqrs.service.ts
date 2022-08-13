@@ -9,7 +9,7 @@ export class PqrsService {
 
   URI_FORM = "http://localhost:5000/api/form"
 
-  form: any
+  forms: any
 
   currentForm: Form
 

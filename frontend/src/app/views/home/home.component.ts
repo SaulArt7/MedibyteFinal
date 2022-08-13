@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { PqrsService } from 'src/app/services/pqrs.service';
 import { Form } from 'src/app/models/form.model';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
 
     this.pqrsService.getForm().subscribe(
       (data: any) => {
-        this.pqrsService.form = data.form
+        this.pqrsService.forms = data.form
       },
       (error) => {
         console.log (error)
