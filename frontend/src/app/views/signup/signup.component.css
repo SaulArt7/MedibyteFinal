@@ -174,13 +174,6 @@
     width: 118%;
 }
 
-@media (max-width: 1200px){
-
-    .logologin {
-        display:contents;
-        justify-content: center;
-    }
-}
 
 .img1 {
     max-width: 100%;
@@ -195,13 +188,6 @@
     width: 100%;
     margin: 0 auto;
 
-}
-
-
-.linealogin {
-    height: 17px !important;
-    max-width: 100%;
-    min-height: 100%;
 }
 
 .ms-11 {
