@@ -42,3 +42,6 @@ import { TiendaComponent } from './views/tienda/tienda.component';
 })
 export class AppModule { }
 
+
+
+
