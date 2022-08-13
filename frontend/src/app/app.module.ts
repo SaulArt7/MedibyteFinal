@@ -41,3 +41,6 @@ import { TiendaComponent } from './views/tienda/tienda.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
