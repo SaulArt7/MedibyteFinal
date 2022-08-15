@@ -4,10 +4,10 @@ const router = express.Router()
 // const jwt = require('jsonwebtoken')
 
 // Modelo que vamos a utilizar
-const Worker = require('../models/Worker.model')// Mi Modelo de la colección
+const Worker = require('../models/worker.model')// Mi Modelo de la colección
 
 const { request, response } = require('express')
-const { findOne } = require('../models/Worker.model')
+const { findOne } = require('../models/worker.model')
 
 router.get("/get-all-workers", async (request, response) => {
     try {
