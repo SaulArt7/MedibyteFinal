@@ -4,10 +4,10 @@ const router = express.Router()
 // const jwt = require('jsonwebtoken')
 
 // Modelo que vamos a utilizar
-const Access = require('../models/Access.model') // Nuestro modelo de la colección
+const Access = require('../models/access.model') // Nuestro modelo de la colección
 
 const { request, response } = require('express')
-const { findOne } = require('../models/Access.model')
+const { findOne } = require('../models/access.model')
 
 router.get("/get-all-accessP", async (request, response) => {
     try {
