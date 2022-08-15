@@ -10,6 +10,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { AdminClientComponent } from './views/admin-client/admin-client.component';
 import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
 import { TiendaComponent } from './views/tienda/tienda.component';
+import { ProductListComponent } from './views/product-list/product-list.component';
 
 const routes: Routes = [
 // Rutas a componentes
@@ -22,6 +23,7 @@ const routes: Routes = [
 {path: 'calendar', component:CalendarComponent},
 {path: 'pqrs', component: PqrsComponent},
 {path: 'tienda', component: TiendaComponent},
+{path: 'admin-products/list', component: ProductListComponent},
 
 // Redireccionamientos o página 404
 {path: '', redirectTo: 'home', pathMatch: 'full'},

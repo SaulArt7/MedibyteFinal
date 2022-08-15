@@ -15,6 +15,7 @@ import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { PqrsComponent } from './views/pqrs/pqrs.component';
 import { TiendaComponent } from './views/tienda/tienda.component';
+import { ProductListComponent } from './views/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TiendaComponent } from './views/tienda/tienda.component';
     AdminClientComponent,
     CalendarComponent,
     PqrsComponent,
-    TiendaComponent
+    TiendaComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
