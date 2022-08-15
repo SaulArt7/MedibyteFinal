@@ -59,7 +59,7 @@
           <a class="nav-link underline" onclick="window.scrollTo( 0, 550);">Nosotros</a>
           <a class="nav-link underline" onclick="window.scrollTo( 0, 1600);" >Servicios</a>
           <a class="nav-link underline" onclick="window.scrollTo( 0, 3500);">Contacto</a> -->
-          <a class="nav-link underline" aria-current="page" href="/productos">Productos</a>
+          <a class="nav-link underline" aria-current="page" href="/admin-products">Productos</a>
           <a class="nav-link underline" aria-current="page" href="/citas">Citas</a>
           <a class="nav-link underline" aria-current="page" href="/pqrs">PQRS</a>
           <a class="nav-link underline " aria-current="page" >Hola! {{ this.usersService.decodeToken().data.name }} {{ this.usersService.decodeToken().data.lastName }}</a>
@@ -116,7 +116,7 @@
           <a class="nav-link underline me-10" aria-current="page">{{ this.usersService.decodeToken().data.role }}</a>
           <a class="nav-link underline" aria-current="page" href="/home">Inicio</a>
           <a class="nav-link underline" aria-current="page" href="/Admin-citas">Administrar Citas</a>
-          <a class="nav-link underline" aria-current="page" href="/productos">Productos</a>
+          <a class="nav-link underline" aria-current="page" href="/admin-products">Productos</a>
           <a class="nav-link underline " aria-current="page" >Hola! {{ this.usersService.decodeToken().data.name }} {{ this.usersService.decodeToken().data.lastName }}</a>
           <a href="" class="nav-link underline" (click)="usersService.logOut()">Salir</a>
         </div>

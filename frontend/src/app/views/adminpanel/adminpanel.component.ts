@@ -47,6 +47,7 @@ export class AdminpanelComponent implements OnInit {
       // Validaciones del profe para verificar si algún campo está vacío en el formualario:
       let { email, name, lastName, password, confirmPassword } = form.value;
       if (!email || !name || !lastName || !password || !confirmPassword) {
+        console.log(form.value);
         alert('Diligencie todos los campos');
       }
       if (password !== confirmPassword) {
