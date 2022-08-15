@@ -26,12 +26,12 @@ require('./database.js')
 const productRoutes=require('./routes/product.routes')
 const userRoutes=require('./routes/user.routes')
 const accessRoutes=require('./routes/access.routes')
-
+const workerRoutes=require('./routes/worker.routes')
 
 app.use('/api/products',productRoutes)
 app.use('/api/users',userRoutes)
 app.use('/api/accessP',accessRoutes)
-
+app.use('/api/workers',workerRoutes)
 app.use('/api/form', require('./routes/form'))
 
 

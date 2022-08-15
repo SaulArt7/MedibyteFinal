@@ -4,16 +4,16 @@ const router = express.Router()
 // const jwt = require('jsonwebtoken')
 
 // Modelo que vamos a utilizar
-const Access = require('../models/Access.model') // Nuestro modelo de la colección
+const Worker = require('../models/Worker.model')// Mi Modelo de la colección
 
 const { request, response } = require('express')
-const { findOne } = require('../models/Access.model')
+const { findOne } = require('../models/Worker.model')
 
-router.get("/get-all-accessP", async (request, response) => {
+router.get("/get-all-workers", async (request, response) => {
     try {
-        const accessP = await Access.find() // find es un método de Monggose.
+        const workers = await Worker.find() // find es un método de Monggose.
         // así como findByID(), Save() // Métodos de mongoose.
-        return response.status(200).json({ accessP })
+        return response.status(200).json({ workers })
     } catch (error) {
         console.log("Error:", error)
         return response.status(400).json({ msg: "Error captado en try de ruta (backend) de obtener todos los accesos" })
@@ -21,11 +21,11 @@ router.get("/get-all-accessP", async (request, response) => {
 })
 
 // Crear un Registro de Acceso
-router.post("/create-access", async (request, response) => {
+router.post("/create-worker", async (request, response) => {
     try {
-        const accessToSave = new Access(request.body)
-        await accessToSave.save()
-        return response.status(201).json({ status: "El accesso fue creado exitosamente", accessToSave })
+        const workerToSave = new Worker(request.body)
+        await workerToSave.save()
+        return response.status(201).json({ status: "El worker fue creado exitosamente", workerToSave })
         //if (res) --- y sino, el siguiente return, por si no existe.
     } catch (error) {
         console.log(error); // Se envía el error para verlo
@@ -36,8 +36,8 @@ router.post("/create-access", async (request, response) => {
 router.get("/:id", async (request, response) => {
     try {
         const id = request.params.id
-        const user = await Access.findById(id)
-        return response.status(200).json({ user })
+        const worker = await Worker.findById(id)
+        return response.status(200).json({ worker })
 
     } catch (error) {
         console.log("Error:", error)
@@ -49,10 +49,22 @@ router.get("/biometric/:idB", async (request, response) => {
     try {
         const idB = request.params.idB
         console.log(idB)
-        console.log('Llega a esta línea');
-        const user = await Access.find({"idBiometric":idB},{"idWorker":1,"USUDESCRI":1,"USUESTADO":1,"_id":0});
-        return response.status(200).json({ user })
-
+        // const worker = await Worker.find({ "idBiometric": idB }, { "idWorker": 1, "USUDESCRI": 1, "USUESTADO": 1, "_id": 0 });
+        const worker = await Worker.find({ "idBiometric": idB });
+        // console.log(worker[0].idWorker);
+        if (worker[0]) {
+            // console.log('Usuario recibido')
+            // console.log(worker);        
+            // console.log(typeof (worker));
+            return response.status(200).json({ "idBiometric": worker[0].idBiometric, "_id": worker[0]._id, "idworker": worker[0].idWorker, "USUESTADO": worker[0].USUESTADO, "nameWorker": worker[0].nameWorker, "emailWorker": worker[0].emailWorker, })
+        };
+        return response.status(301).json({ worker })
+        // if (worker == []) { 'Recibió array vacío' }
+        // console.log(worker[0].idWorker);      
+        // if (!worker.idWorker) {
+        //     console.log('Usuario no recibido')
+        //     return response.status(301).json({ worker })
+        // };
     } catch (error) {
         console.log("Error:", error)
         return response.status(400).json({ msg: "Error captado en try de ruta get con parámetro idB" })
@@ -62,13 +74,13 @@ router.get("/biometric/:idB", async (request, response) => {
 
 // // Actualizar un documento de un Usuario:
 
-router.put("/update-access/:id", async (request, response) => {
+router.put("/update-worker/:id", async (request, response) => {
     try {
         const id = request.params.id
         const body = request.body
-        await Access.findByIdAndUpdate(id, { $set: body })
+        await Worker.findByIdAndUpdate(id, { $set: body })
         // aqui podemos guardarlo en constante para saber si fue actualizado o nó
-        return response.status(200).json({ status: "Accesso Actualizado" })
+        return response.status(200).json({ status: "Worker Actualizado" })
     } catch (error) {
         console.log("Error:", error)
         return response.status(400).json({ msg: "Error captado en try de ruta put para actualizar registro con parámetro id" })
@@ -76,15 +88,15 @@ router.put("/update-access/:id", async (request, response) => {
 })
 
 // // Eliminar el documento del Acceso (El más fácil)
-router.delete("/delete-access/:id", async (request, response) => {
+router.delete("/delete-worker/:id", async (request, response) => {
     try {
         const id = request.params.id
-        await Access.findByIdAndDelete(id) // Más exacto con Delete, y más rápida que findByIdAndRemove
+        await Worker.findByIdAndDelete(id) // Más exacto con Delete, y más rápida que findByIdAndRemove
         // aqui podemos guardarlo en constante para saber si fue actualizado o nó
         return response.status(200).json({ status: "Acceso Eliminado" })
     } catch (error) {
         console.log("Error:", error)
-        return response.status(400).json({ msg: "Error captado en try de ruta delete-access para eliminar registro con parámetro id" })
+        return response.status(400).json({ msg: "Error captado en try de ruta delete-worker para eliminar registro con parámetro id" })
     }
 
 })
