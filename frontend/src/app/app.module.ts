@@ -16,6 +16,7 @@ import { PqrsComponent } from './views/pqrs/pqrs.component';
 import { TiendaComponent } from './views/tienda/tienda.component';
 import { ProductListComponent } from './views/product-list/product-list.component';
 import { FormCitaComponent } from './views/form-cita/form-cita.component';
+import { AccessControlComponent } from './views/access-control/access-control.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FormCitaComponent } from './views/form-cita/form-cita.component';
     PqrsComponent,
     ProductListComponent,
     FormCitaComponent,
+    AccessControlComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,5 +46,3 @@ import { FormCitaComponent } from './views/form-cita/form-cita.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-

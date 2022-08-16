@@ -15,6 +15,7 @@ import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
 import { TiendaComponent } from './views/tienda/tienda.component';
 import { ProductListComponent } from './views/product-list/product-list.component';
 import { FormCitaComponent } from './views/form-cita/form-cita.component';
+import { AccessControlComponent } from './views/access-control/access-control.component';
 
 const routes: Routes = [
 // Rutas a componentes
@@ -28,7 +29,7 @@ const routes: Routes = [
 {path: 'pqrs', component: PqrsComponent},
 {path: 'admin-products/list', component: ProductListComponent},
 {path: 'form-citas', component: FormCitaComponent},
-
+{path: 'accessControl', component: AccessControlComponent},
 
 // Redireccionamientos o página 404
 {path: '', redirectTo: '/home', pathMatch: 'full'},
