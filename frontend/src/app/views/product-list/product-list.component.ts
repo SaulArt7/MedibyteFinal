@@ -76,6 +76,11 @@ export class ProductListComponent implements OnInit {
     // this.productsService.putProduct(product);
     localStorage.setItem('productName', product.name.valueOf());
     localStorage.setItem('productID', product._id.valueOf());
+    localStorage.setItem('productPrice', product.price.toString());
+    localStorage.setItem('productDescription', product.description.valueOf());
+    localStorage.setItem('productStock', product.stock.toString());
+    localStorage.setItem('productImage', product.image.valueOf());
+    localStorage.setItem('productCategory', product.category.valueOf());
     // console.log(typeof(product.name))
   }
 
