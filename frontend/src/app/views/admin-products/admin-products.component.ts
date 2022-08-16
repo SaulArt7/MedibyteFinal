@@ -28,6 +28,16 @@ export class AdminProductsComponent implements OnInit {
       this.productsService.selectedProduct.name = a;
       let b = new String(localStorage.getItem('productID'));
       this.productsService.selectedProduct._id = b;
+      let c = new Number(localStorage.getItem('productPrice'));
+      this.productsService.selectedProduct.price = c;
+      let d = new String(localStorage.getItem('productDescription'));
+      this.productsService.selectedProduct.description = d;
+      let e = new Number(localStorage.getItem('productStock'));
+      this.productsService.selectedProduct.stock = e;
+      let f = new String(localStorage.getItem('productImage'));
+      this.productsService.selectedProduct.image = f;
+      let g = new String(localStorage.getItem('productCategory'));
+      this.productsService.selectedProduct.category = g;
     }
   }
 
@@ -85,7 +95,7 @@ export class AdminProductsComponent implements OnInit {
   }
 
   deleteProduct(_id: string) {
-    if (confirm('¿Estás seguro de que desea eliminar este usuario?')) {
+    if (confirm('¿Estás seguro de que desea eliminar este producto?')) {
       this.productsService.deleteProduct(_id).subscribe((res) => {
         console.log(res);
         // M.toast({ html: 'Usuario eliminado satisfactoriamente' });
