@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
 
       this.pqrsService.updateForm(_id, data).subscribe(
         (data: any)=>{
-          alert('Formulario actualizado')
+          alert('Formulario PQRS actualizado')
           this.getForm()
           form.reset(form)
           this.pqrsService.currentForm = new Form()

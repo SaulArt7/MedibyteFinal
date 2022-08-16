@@ -1,6 +1,6 @@
-<div>
-    <div class="container mt-4">
-      <table class="w-100">
+<div class="table-responsive">
+    <div class="container mt-4 table table-bordered">
+      <table class="w-100 table table-bordered border-dark">
         <thead class="text-center bg-purple-soft text-white p-3 rounded-top">
           <th>Código</th>
           <th>Nombre y Apellido</th>
@@ -12,7 +12,7 @@
           <th>Acciones</th>
         </thead>
         <tbody class="text-center ">
-          <tr *ngFor="let form of pqrsService.forms.forms" class="border-bottom">
+          <tr *ngFor="let form of pqrsService.forms.forms" class="border-bottom border-dark">
             <td>{{ form._id }}</td>
             <td>{{ form.fullName }}</td>
             <td>{{ form.email }}</td>
@@ -34,9 +34,9 @@
 
 <!-- actualizacion formulario -->
 <div class="d-flex justify-content-center">
-  <div class="w-25 border m-5 p-5 rounded shadow p-4">
+  <div class=" border m-5 p-5 rounded shadow p-4 ">
     <form #pqrsForm="ngForm">
-      <h3 class="my-4 text-primary text-center">Actualizar formulario</h3>
+      <h3 class="my-4 text-primary text-center">Actualizar formulario PQRS</h3>
 
       <hr class="mb-4" />
 
