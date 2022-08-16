@@ -12,7 +12,6 @@ import { AdminPQRSGuard } from './guards/admin-pqrs.guard';
 import { MedicoGuard } from "./guards/medico.guard";
 import { AdminProductosGuard } from './guards/admin-productos.guard';
 
-import { CalendarComponent } from './components/calendar/calendar.component';
 
 
 import { AdminClientComponent } from './views/admin-client/admin-client.component';
@@ -31,7 +30,6 @@ const routes: Routes = [
 {path: 'admin-products',component:AdminProductsComponent, canActivate: [AdminProductosGuard]},
 {path: 'adminpanel', component: AdminpanelComponent, canActivate: [SuperAdminGuard]},
 {path: 'admin-client', component:AdminClientComponent, canActivate: [SuperAdminGuard]},
-{path: 'calendar', component:CalendarComponent},
 {path: 'tienda', component: TiendaComponent},
 {path: 'pqrs', component: PqrsComponent, canActivate: [AdminPQRSGuard]},
 
