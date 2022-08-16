@@ -147,7 +147,7 @@
 }
 
 .user_placeholder::placeholder {
-    background-image: url(assets/icons/user.png);
+    background-image: url(../../../assets/icons/user.png);
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: left center;
@@ -155,7 +155,7 @@
 }
 
 .user_placeholder2::placeholder {
-    background-image: url(assets/icons/lock.png);
+    background-image: url(../../../assets/icons/lock.png);
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: left center;
