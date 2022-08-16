@@ -42,3 +42,5 @@ import { ProductListComponent } from './views/product-list/product-list.componen
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
