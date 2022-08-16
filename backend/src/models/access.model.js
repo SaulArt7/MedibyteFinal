@@ -9,9 +9,9 @@ const accessSchema = new Schema(
         nameWorker: { type: String, required: true, default: "Juan Villareal" },
         emailWorker: { type: String, required: true , default: "prueba@mail.com"},
         fechaHoraEvento: { type: Date },
-        tipoEvento: { type: String, required: true, default: "EntradaDefecto" },
-        accessGiven: { type: Boolean, required: true , default: "Entrada"},
-        madeAccess: { type: Boolean, required: true, default: "Correcto" }
+        tipoEvento: { type: String, default: "EntradaDefecto" },
+        accessGiven: { type: Boolean,  default: "Entrada"},
+        madeAccess: { type: Boolean, default: "Correcto" }
     },
     {
         timestamps: true,

@@ -20,7 +20,7 @@ router.get("/get-all-workers", async (request, response) => {
     }
 })
 
-// Crear un Registro de Acceso
+// Crear un Registro de Worker
 router.post("/create-worker", async (request, response) => {
     try {
         const workerToSave = new Worker(request.body)
@@ -56,7 +56,26 @@ router.get("/biometric/:idB", async (request, response) => {
             // console.log('Usuario recibido')
             // console.log(worker);        
             // console.log(typeof (worker));
-            return response.status(200).json({ "idBiometric": worker[0].idBiometric, "_id": worker[0]._id, "idworker": worker[0].idWorker, "USUESTADO": worker[0].USUESTADO, "nameWorker": worker[0].nameWorker, "emailWorker": worker[0].emailWorker, })
+
+            response.status(200).json({ "idBiometric": worker[0].idBiometric, "_id": worker[0]._id, "idworker": worker[0].idWorker, "USUESTADO": worker[0].USUESTADO, "nameWorker": worker[0].nameWorker, "emailWorker": worker[0].emailWorker, })
+
+            //
+            // Prueba con POST desde Backend del acceso:
+            //
+            const Access = require('../models/access.model')
+            try {
+                const accessToSave = new Access({ idWorker: worker[0].idWorker, USUESTADO: worker[0].USUESTADO, nameWorker: worker[0].nameWorker, emailWorker: worker[0].emailWorker, tipoEvento: "Entrada", accessGiven: true, madeAccess: true })
+                await accessToSave.save()
+                return;
+                // response.status(201).json({ status: "El accesso fue creado exitosamente", accessToSave })
+                //if (res) --- y sino, el siguiente return, por si no existe.
+            } catch (error) {
+                console.log(error); // Se envía el error para verlo
+                // response.status(400).json({ status: "Code error, no se pudo crear el Acceso en la DB" })
+            }
+            //
+            // Fin de Prueba con POST desde Backend del acceso:
+            //            
         };
         return response.status(301).json({ worker })
         // if (worker == []) { 'Recibió array vacío' }
@@ -70,7 +89,6 @@ router.get("/biometric/:idB", async (request, response) => {
         return response.status(400).json({ msg: "Error captado en try de ruta get con parámetro idB" })
     }
 })
-
 
 // // Actualizar un documento de un Usuario:
 
