@@ -24,8 +24,8 @@ const routes: Routes = [
 {path: 'adminpanel', component: AdminpanelComponent, canActivate: [SuperAdminGuard]},
 {path: 'admin-client', component:AdminClientComponent, canActivate: [SuperAdminGuard]},
 {path: 'tienda', component: TiendaComponent},
-{path: 'pqrs', component: PqrsComponent},
-{path: 'admin-products/list', component: ProductListComponent},
+{path: 'pqrs', component: PqrsComponent, canActivate: [AdminPQRSGuard]},
+{path: 'admin-products/list', component: ProductListComponent, canActivate: [AdminProductosGuard]},
 
 // Redireccionamientos o página 404
 {path: '', redirectTo: '/home', pathMatch: 'full'},
