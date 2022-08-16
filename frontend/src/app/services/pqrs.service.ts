@@ -29,4 +29,8 @@ export class PqrsService {
    updateForm(id: string, data: any){
     return this.http.put (`${this.URI_FORM}/update/${id}`,data)
    }
+
+   deleteForm(id: string){
+    return this.http.delete(`${this.URI_FORM}/delete/${id}`)
+   }
 }

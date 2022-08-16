@@ -31,9 +31,9 @@ export class HomeComponent implements OnInit {
   }
 
   createForm(form: NgForm){
-    
+
     if(form.value._id){
-       
+
       const {_id, fullName, email, topic, message, condition, answer } = form.value
 
       if(!fullName || !email || !topic || !message ){
@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
 
    this.pqrsService.createForm(data).subscribe(
     (data) => {
-      alert('Formulario enviado exitosamente')
+      alert('Tu Solicitud de PQRS fue enviada exitosamente')
       form.reset()
       this.pqrsService.currentForm = new Form()
       this.getForm()
