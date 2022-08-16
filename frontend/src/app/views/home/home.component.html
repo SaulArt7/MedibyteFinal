@@ -52,7 +52,7 @@
 
   <!-- Inicio de Sección Nosotros ----------------------------------------------------------------------->
   <div class="container-fluid fix-fixed-top" id="nosotros">
-    
+
   </div>
   <section>
     <div class="container d-flex justify-content-center title-color pt-0">
@@ -318,7 +318,7 @@
     </div>
 
       <!--Formulario-->
-    <div class="contacto-form d-flex flex-wrap align-items-center justify-content-center gap-5"> 
+    <div class="contacto-form d-flex flex-wrap align-items-center justify-content-center gap-5">
       <div class="col-sm-12 col-md-7 rounded shadow p-4">
         <div>
           <p class="text-center">Escríbenos y en breve nos pondremos en contacto contigo</p>
@@ -327,7 +327,7 @@
           <form  class="mx-3" #pqrsForm="ngForm" >
             <div class="mb-3 row">
 
-              <input  type="hidden" 
+              <input  type="hidden"
               id="_id"
               name="_id"
               #_id="ngModel"
@@ -341,7 +341,7 @@
               [ngModel]="pqrsService.currentForm.fullName"
               >
             </div>
-            
+
             <div class="mb-3 row">
               <input class="p-2" type="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo Electronico" for="email"
               id="email"
@@ -350,7 +350,7 @@
               [ngModel]="pqrsService.currentForm.email"
               >
             </div>
-  
+
             <div class="mb-3 row">
               <input class="p-2" type="text"  placeholder="Asunto" for="topic"
               id="topic"
@@ -359,7 +359,7 @@
               [ngModel]="pqrsService.currentForm.topic"
               >
             </div>
-  
+
             <div class="mb-3 row">
               <textarea class="p-2" placeholder="Mensaje"  style="height: 100px" type="text" for="message"
               id="message"
@@ -369,28 +369,28 @@
               ></textarea>
             </div>
 
-            <input  type="hidden" 
+            <input  type="hidden"
               id="condition"
               name="condition"
               #condition="ngModel"
               [ngModel]="pqrsService.currentForm.condition"
             >
 
-            
-            <input  type="hidden" 
+
+            <input  type="hidden"
               id="answer"
               name="answer"
               #answer="ngModel"
               [ngModel]="pqrsService.currentForm.answer"
               >
-  
+
             <div class="d-grid gap-2  ">
               <button class="btn btn dark-blue text-white" type="submit" (click)="createForm(pqrsForm)"> Enviar </button>
             </div>
           </form>
         </div>
-      </div> 
-      
+      </div>
+
       <!--Ubicaicón-->
       <div class="contacto-info col-sm-12 col-md-4" >
         <div class="d-flex justify-content-center mb-5" >
@@ -402,7 +402,7 @@
           <p>1(234)567-891, 1(234)987-654</p>
         </div>
 
-        <div class="text-center mb-5"> 
+        <div class="text-center mb-5">
           <div>
             <button class="mapa mb-3" data-bs-toggle="modal" data-bs-target="#fm-modal-mapa">
               <p class="fw-bold title-color m-0"><img class="icon-info" src="assets/images/marcador-de-posicion.png"  alt=""> &nbsp;&nbsp;VER MAPA</p>
@@ -419,15 +419,15 @@
           </div>
           <p>Calle 42 # 15-34 Cali-Valle del Cauca</p>
         </div>
-        
-        
+
+
         <div class="text-center">
-          <p class="fw-bold title-color"><img class="icon-info" src="assets/images/horas-laborales.png"  alt="imagen prueba"> &nbsp;&nbsp;HORARIO</p> 
+          <p class="fw-bold title-color"><img class="icon-info" src="assets/images/horas-laborales.png"  alt="imagen prueba"> &nbsp;&nbsp;HORARIO</p>
           <p>Lunes a Viernes 7am-5pm</p>
         </div>
       </div>
     </div>
-    
+
   </section>
 
   <!-- Fin de Sección de Contacto 2------------------------------------------------------------------->
