@@ -23,6 +23,12 @@ export class AdminProductsComponent implements OnInit {
   ngOnInit(): void {
     console.log('Hola desde Init de AdminProducts Component');
     this.getProducts();
+    if (localStorage.getItem('productName')) {
+      let a = new String(localStorage.getItem('productName'));
+      this.productsService.selectedProduct.name = a;
+      let b = new String(localStorage.getItem('productID'));
+      this.productsService.selectedProduct._id = b;
+    }
   }
 
   resetForm(form?: NgForm) {
@@ -75,6 +81,7 @@ export class AdminProductsComponent implements OnInit {
   editProduct(product: Product) {
     this.productsService.selectedProduct = product;
     // this.productsService.putProduct(product);
+    window.scrollTo(0, 0);
   }
 
   deleteProduct(_id: string) {

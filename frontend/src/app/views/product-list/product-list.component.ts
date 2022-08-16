@@ -74,6 +74,9 @@ export class ProductListComponent implements OnInit {
   editProduct(product: Product) {
     this.productsService.selectedProduct = product;
     // this.productsService.putProduct(product);
+    localStorage.setItem('productName', product.name.valueOf());
+    localStorage.setItem('productID', product._id.valueOf());
+    // console.log(typeof(product.name))
   }
 
   deleteProduct(_id: string) {
