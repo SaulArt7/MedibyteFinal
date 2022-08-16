@@ -86,4 +86,25 @@ export class PqrsComponent implements OnInit {
     this.pqrsService.currentForm = form
   }
 
+
+  deleteProduct(_id: string){
+
+    const opt = confirm("Estas seguro que deseas eliminar este formulario")
+
+    if(!opt) return
+
+    this.pqrsService.deleteForm(_id).subscribe(
+      (data)=> {
+        this.getForm()
+        alert("Formulario Eliminado")
+      },
+      (error) => {
+        console.log(error)
+      }
+    )
+
+    return
+
+  }
+
 }
