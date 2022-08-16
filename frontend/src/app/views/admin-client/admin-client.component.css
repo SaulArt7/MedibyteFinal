@@ -14,3 +14,68 @@ input[type="date"]{
     cursor: pointer;
     border-radius: 3px;
 }
+
+.calendar {
+    padding: .5rem;
+    border: solid 1px #eaeaea;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px #e4e4e4;
+    text-align: center;
+}
+
+.header-calendar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    padding: 1rem 0;
+}
+
+.header-calendar button {
+    cursor: pointer;
+    background-color: transparent;
+    padding: .1rem;
+    border: none;
+    font-weight: bold;
+}
+
+ol {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 0;
+}
+
+li {
+    padding: clamp(0.3rem, 1vw, 2.5rem);
+
+    font-size: .8rem;
+    cursor: pointer;
+}
+.day-number:hover {
+    color: #fff;
+    background: #63b5e0;
+}
+.disponible {
+    padding: clamp(0.3rem, 1.3vw, 2.5rem);
+    background-color: rgb(245, 211, 19);
+    font-size: .8rem;
+    cursor: pointer;
+}
+.noDisponible {
+    padding: clamp(0.3rem, 1.3vw, 2.5rem);
+    background-color: rgb(122, 14, 14);
+    font-size: .8rem;
+    cursor: no-drop;
+}
+.noDisponible:hover {
+    background-color: rgb(122, 14, 14);
+}
+.first-day {
+    grid-column-start: var(--first-day-start, 0);
+}
+.day-name {
+    color: #c3c2c8;
+    font-weight: bold;
+    font-size: .8rem;
+}

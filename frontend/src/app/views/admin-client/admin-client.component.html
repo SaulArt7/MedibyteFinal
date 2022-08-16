@@ -3,7 +3,7 @@
     <h2 class="text-center mb-5">Datos del paciente</h2>
     <form
       class="d-flex row justify-content-center form-control p-4"
-      (ngSubmit)="formClient(form)"
+      (ngSubmit)="addCita(form)"
       #form="ngForm"
     >
       <!-- Datos Básicos -->
@@ -17,6 +17,9 @@
             aria-describedby="emailHelp"
             value="{{ this.usersService.decodeToken().data.name }}"
             readonly="true"
+            name="name"
+            #name="ngModel"
+            [ngModel]="this.usersService.decodeToken().data.name"
           />
         </div>
         <div class="mb-3 p-1 col-md-6">
@@ -28,6 +31,9 @@
             aria-describedby="emailHelp"
             value="{{ this.usersService.decodeToken().data.lastName }}"
             readonly="true"
+            name="lastName"
+            #lastName="ngModel"
+            [ngModel]="this.usersService.decodeToken().data.lastName"
           />
         </div>
       </div>
@@ -43,6 +49,24 @@
             aria-describedby="emailHelp"
             value="{{ this.usersService.decodeToken().data.email }}"
             readonly="true"
+            name="email"
+            #email="ngModel"
+            [ngModel]="this.usersService.decodeToken().data.email"
+          />
+        </div>
+        <div class="mb-3 p-1 col-md-6">
+          <label for="inputPhoneNumber" class="form-label"
+            >Documento de Identidad</label
+          >
+          <input
+            type="number"
+            class="form-control text-muted"
+            id="inputDocument"
+            value="{{ this.usersService.decodeToken().data.document }}"
+            readonly="true"
+            name="document"
+            #document="ngModel"
+            [ngModel]="this.usersService.decodeToken().data.document"
           />
         </div>
         <div class="mb-3 p-1 col-md-6">
@@ -55,6 +79,9 @@
             id="inputPhoneNumber"
             value="{{ this.usersService.decodeToken().data.tel }}"
             readonly="true"
+            name="tel"
+            #tel="ngModel"
+            [ngModel]="this.usersService.decodeToken().data.tel"
           />
         </div>
       </div>
@@ -71,7 +98,7 @@
             id="inputAddress"
             name="address"
             #addres="ngModel"
-            ngModel=""
+            [ngModel]="this.clientService.client.addres"
           />
         </div>
         <div class="mb-3 p-1 col-md-6">
@@ -81,17 +108,22 @@
           <input
             type="text"
             class="form-control"
-            id="inputAddress2"
-            name="addres2"
-            #addres2="ngModel"
-            ngModel=""
+            id="inputAdressAlt"
+            name="adressAlt"
+            #addressAlt="ngModel"
+            [ngModel]="this.clientService.client.adressAlt"
           />
         </div>
         <div class="mb-3 p-1 col-md-6">
-          <label for="inputState" class="form-label">Departamento</label>
-          <select id="inputState" class="form-select">
-            <option selected>Selecione una opción</option>
-            <option *ngFor="let depart of departs">
+          <label for="inputDepartament" class="form-label">Departamento</label>
+          <select
+            id="inputDepartament"
+            class="form-select"
+            name="departament"
+            #departament="ngModel"
+            [ngModel]="this.clientService.client.departament"
+          >
+            <option selected *ngFor="let depart of departs">
               {{ depart }}
             </option>
           </select>
@@ -115,9 +147,14 @@
           <label for="inputPriorityType" class="form-label"
             >Tipo de Prioridad</label
           >
-          <select id="inputPriorityType" class="form-select">
-            <option selected>Selecione una opción</option>
-            <option *ngFor="let type of tPriority">
+          <select
+            id="inputPriorityType"
+            class="form-select"
+            name="priorityType"
+            #priorityType="ngModel"
+            [ngModel]="this.clientService.client.priorityType"
+          >
+            <option selected *ngFor="let type of tPriority">
               {{ type }}
             </option>
           </select>
@@ -127,9 +164,14 @@
           <label for="inputValuationType" class="form-label"
             >Tipo de Valoración</label
           >
-          <select id="inputValuationType" class="form-select">
-            <option selected>Selecione una opción</option>
-            <option *ngFor="let type of tValuation">
+          <select
+            id="inputValuationType"
+            class="form-select"
+            name="valuationType"
+            #valuationType="ngModel"
+            [ngModel]="this.clientService.client.valuationType"
+          >
+            <option selected *ngFor="let type of tValuation">
               {{ type }}
             </option>
           </select>
@@ -137,7 +179,7 @@
 
         <div class="mb-3 p-1 col-12">
           <label for="inputSymptom" class="form-label"
-            >Descrciba sus sintomas de manera breve</label
+            >Describa sus síntomas de manera breve</label
           >
           <textarea
             class="form-control"
@@ -145,43 +187,69 @@
             rows="3"
             name="symptom"
             #symptom="ngModel"
-            ngModel=""
+            [ngModel]="this.clientService.client.symptom"
           ></textarea>
         </div>
       </div>
 
       <!-- Fecha de Registro -->
       <div class="d-flex row mb-4 p-0">
-        <div class="mb-3 p-0 col-md-6">
+        <div class="d-flex row mb-4 p-0">
           <label for="inputDate" class="form-label"
             >Seleccione el día de su consulta</label
           >
-          <input
-            type="date"
-            class="form-control"
-            id="inputDate"
-            name="inputDate"
-            #inputDate="ngModel"
-            ngModel=""
-          />
+          <div class="wrapper-calendar calendar">
+            <div class="header-calendar">
+              <div>
+                <button (click)="changeMonth(-1)" class="btn-prev">
+                  Antes
+                </button>
+              </div>
+              <h6>{{ dateSelect | date: "MMMM, yyyy" }}</h6>
+              <div>
+                <button (click)="changeMonth(1)" class="btn-next">
+                  Siguiente
+                </button>
+              </div>
+            </div>
+            <ol>
+              <li *ngFor="let day of week" class="day-name">
+                {{ day | slice: 0:3 }}
+              </li>
+
+              <li
+                class="day-number"
+                (click)="clickDay(day)"
+                [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+                *ngFor="let day of monthSelect; let first = first"
+              >
+                <span>{{ day?.value }}</span>
+              </li>
+            </ol>
+          </div>
+
+          <hr />
+          <div class="col-6 d-flex row">
+            <label class="col-2">Fecha:</label><!-- value="{{ dateValue }}" -->
+            
+            <input
+              type="datetime"
+              class="form-control text-muted col-3"
+              value="{{ dateValue }}"
+              id="exampleDate"
+              name="date"
+              #date="ngModel"
+              [ngModel]="this.clientService.client.date"
+            />
+          </div>
         </div>
       </div>
 
       <div class="d-flex row mb-4 p-0">
-        <app-calendar class="mb-3 p-0 col-12"></app-calendar>
-      </div>
-
-      <div class="d-flex row mb-4 p-0">
-        <div class="mb-3 p-0 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1"
-            >Acepto todos los terminos y condiciones</label
-          >
-        </div>
         <button
           type="submit"
           class="btn btn-primary w-auto"
-          (click)="(formClient)"
+          (click)="(addCita)"
         >
           Submit
         </button>
