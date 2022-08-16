@@ -201,15 +201,15 @@
           <div class="wrapper-calendar calendar">
             <div class="header-calendar">
               <div>
-                <button (click)="changeMonth(-1)" class="btn-prev">
+                <a  (click)="changeMonth(-1)" class="btn-prev">
                   Antes
-                </button>
+                </a>
               </div>
               <h6>{{ dateSelect | date: "MMMM, yyyy" }}</h6>
               <div>
-                <button (click)="changeMonth(1)" class="btn-next">
+                <a (click)="changeMonth(1)" class="btn-next">
                   Siguiente
-                </button>
+                </a>
               </div>
             </div>
             <ol>
@@ -231,7 +231,7 @@
           <hr />
           <div class="col-6 d-flex row">
             <label class="col-2">Fecha:</label><!-- value="{{ dateValue }}" -->
-            
+
             <input
               type="datetime"
               class="form-control text-muted col-3"
