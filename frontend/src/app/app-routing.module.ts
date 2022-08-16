@@ -6,12 +6,15 @@ import { LoginComponent } from './views/login/login.component';
 import { SignupComponent } from './views/signup/signup.component';
 import { PqrsComponent } from './views/pqrs/pqrs.component';
 import { UserGuard } from './guards/user.guard';
+
 import { SuperAdminGuard } from './guards/super-admin.guard';
 import { AdminPQRSGuard } from './guards/admin-pqrs.guard';
 import { MedicoGuard } from "./guards/medico.guard";
 import { AdminProductosGuard } from './guards/admin-productos.guard';
 
 import { CalendarComponent } from './components/calendar/calendar.component';
+
+
 import { AdminClientComponent } from './views/admin-client/admin-client.component';
 import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
 import { TiendaComponent } from './views/tienda/tienda.component';
@@ -31,7 +34,6 @@ const routes: Routes = [
 {path: 'calendar', component:CalendarComponent},
 {path: 'tienda', component: TiendaComponent},
 {path: 'pqrs', component: PqrsComponent, canActivate: [AdminPQRSGuard]},
-
 
 // Redireccionamientos o página 404
 {path: '', redirectTo: '/home', pathMatch: 'full'},

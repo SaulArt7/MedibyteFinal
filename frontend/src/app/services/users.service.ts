@@ -16,7 +16,7 @@ export class UsersService {
 
   URL_API = 'http://localhost:5000/api/users';
 
-  constructor(public http: HttpClient, public router: Router) {
+  constructor(public http: HttpClient , public router: Router) {
     this.selectedUser = new User();
   }
 

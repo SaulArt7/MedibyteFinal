@@ -33,6 +33,7 @@ app.use('/api/users',userRoutes)
 app.use('/api/accessP',accessRoutes)
 
 app.use('/api/form', require('./routes/form'))
+app.use('/api/cita', require('./routes/cita.routes'))
 
 
 app.listen(port, () => {

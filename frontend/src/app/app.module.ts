@@ -12,7 +12,6 @@ import { AdminProductsComponent } from './views/admin-products/admin-products.co
 import { AdminClientComponent } from './views/admin-client/admin-client.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
 import { PqrsComponent } from './views/pqrs/pqrs.component';
 import { TiendaComponent } from './views/tienda/tienda.component';
 
@@ -27,9 +26,9 @@ import { TiendaComponent } from './views/tienda/tienda.component';
     FooterComponent,
     AdminpanelComponent,
     AdminClientComponent,
-    CalendarComponent,
     PqrsComponent,
-    TiendaComponent
+    TiendaComponent,
+    PqrsComponent,
   ],
   imports: [
     BrowserModule,
