@@ -4,3 +4,15 @@
 .form-title {
     color: #1c92d2;
   }
+
+  .banner-nav2 {
+    background-color: #aad8ef;
+    color: #004e92;
+    font-weight: bold;
+ }
+
+ .bike {
+  text-align: center;
+  color: #FFFF;
+  font-size: 1.5rem;
+}
