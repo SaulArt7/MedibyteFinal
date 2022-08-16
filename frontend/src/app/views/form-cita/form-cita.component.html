@@ -1,0 +1,36 @@
+<div class="contenedor text-center m-5 table-responsive">
+  <table class="table table-bordered table-striped rounded">
+    <thead class="bg  align-middle">
+      <th class="p-2">Nombre</th>
+      <th class="p-2">Apellido</th>
+      <th class="p-2">Email</th>
+      <th class="p-2">N° Documento</th>
+      <th class="p-2">Teléfono</th>
+      <th class="p-2">Dirección Principal</th>
+      <th class="p-2">Dirección Alternativa</th>
+      <th class="p-2">Departamento</th>
+      <th class="p-2">Ciudad</th>
+      <th class="p-2">Tipo de Prioridad</th>
+      <th class="p-2">Tipo de Valoración</th>
+      <th class="p-2">Síntomas</th>
+      <th class="p-2">Fecha Agendada</th>
+    </thead>
+    <tbody class="align-middle">
+      <tr *ngFor="let cita of clientService.cita.cita">
+        <td>{{ cita.name }}</td>
+        <td>{{ cita.lastName }}</td>
+        <td>{{ cita.email }}</td>
+        <td>{{ cita.document }}</td>
+        <td>{{ cita.tel }}</td>
+        <td>{{ cita.address }}</td>
+        <td>{{ cita.adressAlt }}</td>
+        <td>{{ cita.departament }}</td>
+        <td>{{ cita.city }}</td>
+        <td>{{ cita.priorityType }}</td>
+        <td>{{ cita.valuationType }}</td>
+        <td>{{ cita.symptom }}</td>
+        <td>{{ cita.date | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

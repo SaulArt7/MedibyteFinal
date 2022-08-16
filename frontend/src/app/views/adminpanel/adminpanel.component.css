@@ -1,0 +1,12 @@
+.form{
+    max-width: 25rem;
+}
+.form2{
+    width: clamp(17.5rem, 44vw, 40.875rem);
+}
+.font{
+    font-size: 0.8rem;
+}
+.bg{
+    background: #63b5e0;
+}

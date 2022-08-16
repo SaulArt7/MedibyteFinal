@@ -15,6 +15,7 @@ import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
 import { PqrsComponent } from './views/pqrs/pqrs.component';
 import { TiendaComponent } from './views/tienda/tienda.component';
 import { ProductListComponent } from './views/product-list/product-list.component';
+import { FormCitaComponent } from './views/form-cita/form-cita.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProductListComponent } from './views/product-list/product-list.componen
     PqrsComponent,
     TiendaComponent,
     PqrsComponent,
-    ProductListComponent
+    ProductListComponent,
+    FormCitaComponent,
   ],
   imports: [
     BrowserModule,
