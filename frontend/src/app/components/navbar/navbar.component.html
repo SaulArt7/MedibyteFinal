@@ -74,21 +74,38 @@
 
       <div *ngIf="this.usersService.decodeToken().data.role === 'SuperAdmin'" >
 
+
+
         <div class="navbar-nav ms-auto">
-          <a class="nav-link underline me-10" aria-current="page">{{ this.usersService.decodeToken().data.role }}</a>
-          <a class="nav-link underline" aria-current="page" href="/home">Inicio</a>
-          <a class="nav-link underline" href="/admin-products">Administrar Productos</a>
-          <a class="nav-link underline" href="/adminpanel">Admin Panel</a>
-          <a class="nav-link underline" aria-current="page" href="/citas">Citas</a>
-          <a class="nav-link underline" aria-current="page" href="/form-citas">Admin Citas</a>
-          <a class="nav-link underline" aria-current="page" href="/pqrs">PQRS</a>
-          <a class="nav-link underline" aria-current="page" href="/tienda">Tienda</a>
-          <a class="nav-link underlineA " aria-current="page" >Hola! {{ this.usersService.decodeToken().data.name }} {{ this.usersService.decodeToken().data.lastName }}</a>
+          <!-- <a class="nav-link underline me-10" aria-current="page">{{ this.usersService.decodeToken().data.role }}</a> -->
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/home" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Vistas Usuario
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="/citas">Citas</a></li>
+                  <li><a class="dropdown-item" href="/tienda">Tienda</a></li>
+                  <li><a class="dropdown-item" href="/signup">Registro</a></li>
+                  <li><a class="dropdown-item" href="/home">Inicio</a></li>
+                  <!-- <li> <a class="dropdown-item" href="/tienda">Tienda</a></li> -->
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <a class="nav-link underline" href="/admin-products">Gestión Productos</a>
+          <a class="nav-link underline" href="/adminpanel">Gestión Usuarios</a>
+          <a class="nav-link underline" aria-current="page" href="/form-citas">Gestión Citas</a>
+          <a class="nav-link underline" aria-current="page" href="/pqrs">Gestión PQRS</a>
+          <a class="nav-link underlineA " aria-current="page" >Hola SuperAdmin {{ this.usersService.decodeToken().data.name }} !</a>
           <a href="" class="nav-link underline" (click)="usersService.logOut()">Salir</a>
         </div>
-
       </div>
-
 
       <div *ngIf="this.usersService.decodeToken().data.role === 'AdminPQRS'" >
 
