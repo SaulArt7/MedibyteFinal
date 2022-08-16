@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Cita } from '../models/cita.model';
 import { Router } from '@angular/router';
+import { Form } from '../models/form.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +14,11 @@ export class ClientService {
   URL_API = 'http://localhost:5000/api/cita'; //http://localhost:5000/api/cita
   client: Cita;
 
+  
+
   constructor(public http: HttpClient,  public router: Router) {
     this.client = new Cita()
+    
   }
 
   getCita() {

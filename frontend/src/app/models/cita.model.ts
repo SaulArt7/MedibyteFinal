@@ -5,7 +5,7 @@ export class Cita {
     email: string;
     document: number;
     tel: number;
-    addres: string;
+    address: string;
     adressAlt: string;
     departament: string;
     city: string;
@@ -22,7 +22,7 @@ export class Cita {
         email = '',
         document = 0,
         tel = 0,
-        addres = '',
+        address = '',
         adressAlt = '',
         departament = '',
         city = '',
@@ -37,7 +37,7 @@ export class Cita {
         this.email = email
         this.document = document
         this.tel = tel
-        this.addres = addres;
+        this.address = address;
         this.adressAlt = adressAlt;
         this.departament = departament;
         this.city = city;
