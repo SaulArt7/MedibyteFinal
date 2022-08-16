@@ -1,4 +1,4 @@
-export class Accsess {
+export class Access {
   idBiometric: String;
   idWorker: String;
   USUESTADO: Number;
