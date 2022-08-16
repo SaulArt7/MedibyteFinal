@@ -3,32 +3,25 @@ import { NgForm } from '@angular/forms';
 import { Product } from 'src/app/models/product.model';
 import { ProductsService } from 'src/app/services/products.service';
 
-// import { CommonModule } from '@angular/common';
-
 declare var M: any;
 
 @Component({
-  selector: 'app-admin-products',
-  templateUrl: './admin-products.component.html',
-  styleUrls: ['./admin-products.component.css'],
-  providers: [ProductsService],
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css'],
+  providers: [ProductsService]
 })
-export class AdminProductsComponent implements OnInit {
-  constructor(public productsService: ProductsService) {
-    this.load = false;
-  }
+export class ProductListComponent implements OnInit {
 
-  public load: boolean; // Para evitar error de carga de productos
+  constructor(public productsService: ProductsService ) {
+    this.load = false;
+   }
+
+   public load: boolean;
 
   ngOnInit(): void {
     console.log('Hola desde Init de AdminProducts Component');
     this.getProducts();
-    if (localStorage.getItem('productName')) {
-      let a = new String(localStorage.getItem('productName'));
-      this.productsService.selectedProduct.name = a;
-      let b = new String(localStorage.getItem('productID'));
-      this.productsService.selectedProduct._id = b;
-    }
   }
 
   resetForm(form?: NgForm) {
@@ -81,7 +74,9 @@ export class AdminProductsComponent implements OnInit {
   editProduct(product: Product) {
     this.productsService.selectedProduct = product;
     // this.productsService.putProduct(product);
-    window.scrollTo(0, 0);
+    localStorage.setItem('productName', product.name.valueOf());
+    localStorage.setItem('productID', product._id.valueOf());
+    // console.log(typeof(product.name))
   }
 
   deleteProduct(_id: string) {
@@ -93,4 +88,5 @@ export class AdminProductsComponent implements OnInit {
       });
     }
   }
+
 }

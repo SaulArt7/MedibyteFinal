@@ -75,7 +75,7 @@ router.delete("/delete-product/:id", async (request, response) => {
         const id = request.params.id
         await Product.findByIdAndDelete(id) // Más exacto con Delete, y más rápida que findByIdAndRemove
         // aqui podemos guardarlo en constante para saber si fue actualizado o nó
-        return response.status(200).json({ status: "Usuario Eliminado" })
+        return response.status(200).json({ status: "Producto Eliminado" })
     } catch (error) {
         console.log("Error:", error)
         return response.status(400).json({ msg: "Code error" })

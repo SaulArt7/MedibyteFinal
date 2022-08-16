@@ -1,10 +1,11 @@
 export class Product {
-  _id: string;
+  _id: String;
   name: String;
   price: Number;
   description: String;
   stock: Number;
   image: String;
+  category: String;
 
   constructor(
     _id = '',
@@ -12,7 +13,8 @@ export class Product {
     price = 0,
     description = '',
     stock = 0,
-    image = ''
+    image = '',
+    category = ''
   ) {
     this._id = _id;
     this.name = name;
@@ -20,5 +22,6 @@ export class Product {
     this.description = description;
     this.stock = stock;
     this.image = image;
+    this.category = category;
   }
 }

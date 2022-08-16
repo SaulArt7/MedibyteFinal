@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
 import { PqrsComponent } from './views/pqrs/pqrs.component';
 import { TiendaComponent } from './views/tienda/tienda.component';
+import { ProductListComponent } from './views/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TiendaComponent } from './views/tienda/tienda.component';
     PqrsComponent,
     TiendaComponent,
     PqrsComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

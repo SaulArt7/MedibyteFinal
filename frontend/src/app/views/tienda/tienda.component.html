@@ -1,3 +1,13 @@
+<nav class="navbar bg-white">
+  <div class="container d-flex justify-content-center">
+    <form class="d-flex justify-content-center w-75" role="search">
+      <input class="form-control me-2 search-bar" type="search" placeholder="Búsqueda" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
+    <a href="/tienda" class=""><img class="img-fluid p-2 cart" src="https://www.farmatodo.com.co/assets/svg/carrito.svg" alt=""></a>
+  </div>
+</nav>
+
 <!-- Inicio de Carrousel --------------------------------------------------------------------------------->
 <section>
     <div
@@ -20,13 +30,7 @@
             alt="Banner 2"
           />
         </div>
-        <!-- <div class="carousel-item">
-          <img
-            src="../../../assets/images/servicioCompra/salud-bellza.jpg"
-            class="d-block w-100"
-            alt="Banner 3"
-          />
-        </div> -->
+        
       </div>
       <button
         class="carousel-control-prev"
@@ -55,8 +59,59 @@
         src="assets/images/servicioCompra/motorbike.png"
         width="50"
         height="50"
-        alt="logo_moto"
-      /> Ahora puedes pedir nuestros productos a domicilio!!!</p>
+        alt="logo_moto" class="me-2"
+      />  Ahora puedes pedir nuestros productos a domicilio!!!</p>
     </div>
   </section>
+
+
+  <!-- Inicio Tienda --------------------------------------------------------------------------------->
+
+    <div class="banner-nav2 bike pt-3 p-1 mb-3 mt-4">
+       <p> Todos los productos</p>
+    </div>
+
+    
+      <div class="mx-auto d-flex justify-content-evenly flex-wrap " *ngIf="load==true">
+
+
+
+        <div class="card mt-4 mb-4" *ngFor="let product of productsService.products.products">
+          <div class="card-body">
+              <div class="card-img-actions">
+                                            
+                      <img src="{{ product.image }}" class="card-img img-fluid" width="96" height="350" alt="">
+                                              
+                                           
+              </div>
+          </div>
+
+          <div class="card-body bg-light text-center">
+              <div class="mb-2">
+                  <h4 class="font-weight-semibold mb-2">
+                      <a href="#" class="card-title mb-2" data-abc="true">{{ product.name }}</a>
+                  </h4>
+
+                  <p href="#" class="card-text " >{{ product.description }}</p>
+              </div>
+
+              <h3 class="mb-0 font-weight-semibold mt-2">$ {{ product.price }} COP</h3>
+
+              <div class="text-muted mb-2 mt-2">{{ product.stock }} Unidades disponibles</div>
+              <div class="text-muted mb-3 mt-1">{{ product.category }}</div>
+
+              <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Agregar al carrito</button>
+
+                                        
+          </div>
+      </div>
+
+
+
+
+
+
+        </div>
+    
+
   

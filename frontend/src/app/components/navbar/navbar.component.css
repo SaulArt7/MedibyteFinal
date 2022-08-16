@@ -55,11 +55,31 @@
   position: relative;
 }
 
+.underlineA {
+  display: inline-block;
+  margin-block: 2px;
+  position: relative;
+}
+
 .underline::after {
   content: "";
   width: 100%;
   height: 2px;
   background-color: #004e92;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.underlineA::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
   border-radius: 4px;
   position: absolute;
   left: 0;
