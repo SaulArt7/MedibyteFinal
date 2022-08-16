@@ -1,84 +1,75 @@
 const express = require('express')
 const router = express.Router()
-const bcryptjs = require('bcryptjs')
-const jwt = require('jsonwebtoken')
+// const bcryptjs = require('bcryptjs')
+// const jwt = require('jsonwebtoken')
 
 // Modelo que vamos a utilizar
-const Product = require('../models/Product.model') // Nuestro modelo de la colección
+const Access = require('../models/Access.model') // Nuestro modelo de la colección
 
 const { request, response } = require('express')
-const { findOne } = require('../models/Product.model')
+const { findOne } = require('../models/Access.model')
 
-router.get("/get-all", async (request, response) => {
-
-    const products = await Product.find() // find es un método 'model' que es de Monggose.
-    // así como findByID(), Save() // Métodos de mongoose.
-    return response.status(200).json({ products })
-
-    // try {
-    //     const user = await User.find()
-    //     return response.status(200).json({ user })
-    // } catch (error) {
-
-    //     console.log("Error:", error)
-    //     return response.status(400).json({ msg: "Code error" })
-    // }
-})
-
-// Crear un Producto
-router.post("/create", async (request, response) => {
+router.get("/get-all-accessP", async (request, response) => {
     try {
-        const productToSave = new Product(request.body)
-        await productToSave.save()
-        return response.status(201).json({ status: "El producto fue creado exitosamente", productToSave })
-        //if (res) --- y sino, el siguiente return, por si no existe.
-
+        const accessP = await Access.find() // find es un método de Monggose.
+        // así como findByID(), Save() // Métodos de mongoose.
+        return response.status(200).json({ accessP })
     } catch (error) {
-        console.log(error); // Se envía el error para verlo
-        return response.status(400).json({ status: "Code error, no se pudo crear el Usuario en la DB" })
+        console.log("Error:", error)
+        return response.status(400).json({ msg: "Error captado en try de ruta (backend) de obtener todos los accesos" })
     }
 })
 
+// Crear un Registro de Acceso
+router.post("/create-access", async (request, response) => {
+    try {
+        const accessToSave = new Access(request.body)
+        await accessToSave.save()
+        return response.status(201).json({ status: "El accesso fue creado exitosamente", accessToSave })
+        //if (res) --- y sino, el siguiente return, por si no existe.
+    } catch (error) {
+        console.log(error); // Se envía el error para verlo
+        return response.status(400).json({ status: "Code error, no se pudo crear el Acceso en la DB" })
+    }
+})
 
 router.get("/:id", async (request, response) => {
     try {
         const id = request.params.id
-        const user = await Product.findById(id)
+        const user = await Access.findById(id)
         return response.status(200).json({ user })
 
     } catch (error) {
         console.log("Error:", error)
-        return response.status(400).json({ msg: "Code error" })
+        return response.status(400).json({ msg: "Error captado en try de ruta get con parámetro id" })
     }
 })
 
 // // Actualizar un documento de un Usuario:
 
-router.put("/update-product/:id", async (request, response) => {
+router.put("/update-access/:id", async (request, response) => {
     try {
         const id = request.params.id
         const body = request.body
-        await Product.findByIdAndUpdate(id, { $set: body })
+        await Access.findByIdAndUpdate(id, { $set: body })
         // aqui podemos guardarlo en constante para saber si fue actualizado o nó
-        return response.status(200).json({ status: "Producto Actualizado" })
+        return response.status(200).json({ status: "Accesso Actualizado" })
     } catch (error) {
         console.log("Error:", error)
-        return response.status(400).json({ msg: "Code error" })
+        return response.status(400).json({ msg: "Error captado en try de ruta put para actualizar registro con parámetro id" })
     }
-
 })
 
-// // Eliminar el documento del Usuario (El más fácil)
-
-router.delete("/delete-product/:id", async (request, response) => {
+// // Eliminar el documento del Acceso (El más fácil)
+router.delete("/delete-access/:id", async (request, response) => {
     try {
         const id = request.params.id
-        await Product.findByIdAndDelete(id) // Más exacto con Delete, y más rápida que findByIdAndRemove
+        await Access.findByIdAndDelete(id) // Más exacto con Delete, y más rápida que findByIdAndRemove
         // aqui podemos guardarlo en constante para saber si fue actualizado o nó
-        return response.status(200).json({ status: "Producto Eliminado" })
+        return response.status(200).json({ status: "Acceso Eliminado" })
     } catch (error) {
         console.log("Error:", error)
-        return response.status(400).json({ msg: "Code error" })
+        return response.status(400).json({ msg: "Error captado en try de ruta delete-access para eliminar registro con parámetro id" })
     }
 
 })

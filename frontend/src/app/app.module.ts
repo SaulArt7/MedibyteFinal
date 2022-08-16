@@ -12,8 +12,9 @@ import { AdminProductsComponent } from './views/admin-products/admin-products.co
 import { AdminClientComponent } from './views/admin-client/admin-client.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AdminpanelComponent } from './views/adminpanel/adminpanel.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
 import { PqrsComponent } from './views/pqrs/pqrs.component';
+import { TiendaComponent } from './views/tienda/tienda.component';
+import { ProductListComponent } from './views/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,10 @@ import { PqrsComponent } from './views/pqrs/pqrs.component';
     FooterComponent,
     AdminpanelComponent,
     AdminClientComponent,
-    CalendarComponent,
-    PqrsComponent
+    PqrsComponent,
+    TiendaComponent,
+    PqrsComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
@@ -39,5 +42,6 @@ import { PqrsComponent } from './views/pqrs/pqrs.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 
 

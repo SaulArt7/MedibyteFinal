@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { PqrsService } from 'src/app/services/pqrs.service';
 import { Form } from 'src/app/models/form.model';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
 
     this.pqrsService.getForm().subscribe(
       (data: any) => {
-        this.pqrsService.form = data.form
+        this.pqrsService.forms = data.form
       },
       (error) => {
         console.log (error)
@@ -30,9 +31,9 @@ export class HomeComponent implements OnInit {
   }
 
   createForm(form: NgForm){
-    
+
     if(form.value._id){
-       
+
       const {_id, fullName, email, topic, message, condition, answer } = form.value
 
       if(!fullName || !email || !topic || !message ){
@@ -67,7 +68,7 @@ export class HomeComponent implements OnInit {
 
    this.pqrsService.createForm(data).subscribe(
     (data) => {
-      alert('Formulario enviado exitosamente')
+      alert('Tu Solicitud de PQRS fue enviada exitosamente')
       form.reset()
       this.pqrsService.currentForm = new Form()
       this.getForm()

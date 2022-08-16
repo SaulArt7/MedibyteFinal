@@ -40,4 +40,12 @@ router.put('/update/:id', async (request, response) => {
     return response.status(201).json({status: "formulario actualizado" })
 })
 
+
+router.delete('/delete/:id', async(request, response) => {
+    const id = request.params.id
+    await Form.findByIdAndDelete(id)
+    response.status(200).json({status: "Formulario eliminado"})
+})
+
+
 module.exports = router

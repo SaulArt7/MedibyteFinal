@@ -16,7 +16,7 @@ export class UsersService {
 
   URL_API = 'http://localhost:5000/api/users';
 
-  constructor(public http: HttpClient, public router: Router) {
+  constructor(public http: HttpClient , public router: Router) {
     this.selectedUser = new User();
   }
 
@@ -47,6 +47,54 @@ export class UsersService {
   loggedIn() {
     return localStorage.getItem('token') ? true : false;
   }
+
+  isSuperAdmin() {
+
+    const isSuperAdmin = this.decodeToken().data.role
+
+    if(isSuperAdmin === "SuperAdmin") {
+      return true
+    }
+    return false
+  }
+
+
+  isAdminPQRS() {
+
+    const isAdminPQRS = this.decodeToken().data.role
+
+    if(isAdminPQRS === "AdminPQRS" ) {
+      return true
+    }
+    return false
+  }
+
+
+  isMedico() {
+
+    const isMedico = this.decodeToken().data.role
+
+    if(isMedico === "Medico" ) {
+      return true
+    }
+    return false
+  }
+
+
+  isAdminProductos() {
+
+    const isAdminProductos = this.decodeToken().data.role
+
+    if(isAdminProductos === "AdminProductos" ) {
+      return true
+    }
+    return false
+  }
+
+
+
+
+
 
   // jwt-decode
   logOut() {

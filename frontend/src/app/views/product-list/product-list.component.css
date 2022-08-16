@@ -1,0 +1,16 @@
+.bg-azul {
+    background-color: #004e92;
+    color: #FFFF;
+}
+
+.tableFixHead {
+    overflow: auto; height: 480px; 
+}
+
+.tableFixHead thead th { 
+    position: sticky; top: 0; z-index: 1;
+    background-color: #004e92;
+}
+.text-title {
+    color: #004e92;
+}

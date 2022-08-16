@@ -9,7 +9,7 @@ export class PqrsService {
 
   URI_FORM = "http://localhost:5000/api/form"
 
-  form: any
+  forms: any
 
   currentForm: Form
 
@@ -28,5 +28,9 @@ export class PqrsService {
 
    updateForm(id: string, data: any){
     return this.http.put (`${this.URI_FORM}/update/${id}`,data)
+   }
+
+   deleteForm(id: string){
+    return this.http.delete(`${this.URI_FORM}/delete/${id}`)
    }
 }

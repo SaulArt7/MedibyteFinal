@@ -1,1 +1,130 @@
-<p>pqrs works!</p>
+<div>
+    <div class="container mt-4">
+      <table class="w-100">
+        <thead class="text-center bg-purple-soft text-white p-3 rounded-top">
+          <th>Código</th>
+          <th>Nombre y Apellido</th>
+          <th>Email</th>
+          <th>Asunto</th>
+          <th>Mensaje</th>
+          <th>Estado</th>
+          <th>Respuesta</th>
+          <th>Acciones</th>
+        </thead>
+        <tbody class="text-center ">
+          <tr *ngFor="let form of pqrsService.forms.forms" class="border-bottom">
+            <td>{{ form._id }}</td>
+            <td>{{ form.fullName }}</td>
+            <td>{{ form.email }}</td>
+            <td>{{ form.topic }}</td>
+            <td>{{ form.message }}</td>
+            <td class="texto">{{ form.condition }}</td>
+            <td class="texto">{{ form.answer }}</td>
+            <td>
+                <div class="d-flex justify-content-center">
+                <i class="material-icons text-success m-2" style="cursor: pointer;" (click)="updateForm(form)">refresh</i>
+                <i class="material-icons text-primary m-2" style="cursor: pointer;" (click)="deleteForm(form._id)">delete</i>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<!-- actualizacion formulario -->
+<div class="d-flex justify-content-center">
+  <div class="w-25 border m-5 p-5 rounded shadow p-4">
+    <form #pqrsForm="ngForm">
+      <h3 class="my-4 text-primary text-center">Actualizar formulario</h3>
+
+      <hr class="mb-4" />
+
+      <input
+          type="hidden"
+          id="_id"
+          name="_id"
+          #_id="ngModel"
+          [ngModel]="pqrsService.currentForm._id"
+        />
+
+        <input class="p-2" type="text" placeholder="Nombres y Apellidos" for="fullName" type="hidden"
+        id="fullName"
+        name="fullName"
+        #fullName="ngModel"
+        [ngModel]="pqrsService.currentForm.fullName"
+        >
+
+        <input class="p-2" type="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo Electronico" for="email" type="hidden"
+        id="email"
+        name="email"
+        #email="ngModel"
+        [ngModel]="pqrsService.currentForm.email"
+        >
+
+        <input class="p-2" type="text"  placeholder="Asunto" for="topic" type="hidden"
+        id="topic"
+        name="topic"
+        #topic="ngModel"
+        [ngModel]="pqrsService.currentForm.topic"
+        >
+
+        <div class="mb-3 row">
+          <label for="description" class="form-label text-primary">Mensaje</label>
+          <textarea class="p-2"   style="height: 100px" type="text" for="message"
+          id="message"
+          name="message"
+          #message="ngModel"
+          [ngModel]="pqrsService.currentForm.message"
+          readonly="true"
+          class="text-muted"
+          ></textarea>
+        </div>
+
+        <!-- <div class="mb-3 row">
+          <input
+          placeholder="Estado"
+          id="condition"
+          name="condition"
+          #condition="ngModel"
+          [ngModel]="pqrsService.currentForm.condition"
+        >
+        </div> -->
+        <label for="description" class="form-label text-primary">Estado</label>
+        <select class="form-select form-select-sm " aria-label=".form-select-sm example"  id="condition"
+            name="condition"
+            #condition="ngModel"
+            [ngModel]="pqrsService.currentForm.condition">
+              <option value="En espera">En espera</option>
+              <option value="Resuelto">Resuelto</option>
+              <option value="No Resuelto">No Resuelto</option>
+        </select>
+
+        <!-- <div class="mb-3 row mt-3">
+          <input
+          placeholder="Respuesta"
+          id="answer"
+          name="answer"
+          #answer="ngModel"
+          [ngModel]="pqrsService.currentForm.answer"
+        >
+        </div> -->
+
+        <div class="mb-3 row mt-4">
+          <label for="description" class="form-label text-primary">Respuesta</label>
+          <textarea class="p-2"   style="height: 100px" type="text" for="answer"
+          id="answer"
+          name="answer"
+          #message="ngModel"
+          [ngModel]="pqrsService.currentForm.answer"
+          ></textarea>
+        </div>
+
+    <div class="d-grid gap-2">
+      <button class="btn btn dark-blue text-white mt-3 " type="submit" (click)="createForm(pqrsForm)"> Guardar </button>
+    </div>
+
+    </form>
+  </div>
+</div>
+
